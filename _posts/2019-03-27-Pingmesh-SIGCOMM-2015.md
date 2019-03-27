@@ -43,5 +43,7 @@ tags:
    ![](/img/post-pingmesh-4.png) 
    **Silent packet drops 的原因**：switching fabric CRC checksum error, switching ASIC deficit, linecard not well seated, etc. 不能通过reload解决。
 
-### 可能存在的问题？
+### Pingmesh局限
+- 只知道有failure，无法准确定位是哪个设备：例如Packet slient drop具体是那个交换机故障了 还需要结合traceroute
+- 只测量Single packet RTT：而有的failure场景需要多个packet连续的RTT测量。例如TCP parameter tuning错误：the initial congestion window (ICW) reduced from 16 to 4. For long distance TCP sessions, the session finish time increased by several hundreds of milliseconds if the sessions need multiple round trips. Pingmesh did not catch this because it only measures single packet RTT.
 
