@@ -28,9 +28,11 @@ tags:
 - **Pingmesh Agent**: 向controller pull pinglist，TCP/HTTP ping, 上传结果. Every probing needs to be a new connection and uses a new TCP source port. Agent有很多实现上性能和安全的考虑: 严格控制CPU overhead、memory overhead、probe间隔固定为10s. payload 64 bytes.
 - **Data Storage and Analysis**: 负责分析 产生报告 可视化等
 
--***Thinking*** Pingmesh采取的是测量全部pair的RTT,RTT是相对值,因此不需要像[SIMON](https://yi-ran.github.io/2019/03/27/SIMON-NSDI-2019/)一样做到端网卡上的时钟同步
+-***Thinking：***  Pingmesh采取的是测量全部pair的RTT,RTT是相对值,因此不需要像[SIMON](https://yi-ran.github.io/2019/03/27/SIMON-NSDI-2019/)一样做到端网卡上的时钟同步
 
 -***Pingmesh is Always On***
+
+
 ### Implementation and evaluation
 - **测量网络的latency和packet drop rate**
    ![](/img/post-pingmesh-2.png)
@@ -39,7 +41,7 @@ tags:
    ![](/img/post-pingmesh-3.png)
 - **Packet slient drop detection:** *正常情况下 丢包率为$10_{-4}-10_{-5}$,*突然发现丢包率上升到$2\*10_{-3}$.但是没有丢包迹象。Using Pingmesh, we could figure out several source and destination pairs that experienced around 1%-2% random packet drops. We then launched TCP traceroute against those pairs, and finally pinpointed one Spine switch.
    ![](/img/post-pingmesh-4.png) 
-   silent packet drops 的原因：switching fabric CRC checksum error, switching ASIC deficit, linecard not well seated, etc. 不能通过reload解决。
+   **Silent packet drops 的原因**：switching fabric CRC checksum error, switching ASIC deficit, linecard not well seated, etc. 不能通过reload解决。
 
 ### 可能存在的问题？
 
