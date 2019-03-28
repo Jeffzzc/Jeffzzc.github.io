@@ -26,21 +26,21 @@ tags:
 
 ### Design Overview
 
-![](/img/post-netbouncer-1.png)
+<div align=center><img width="150" height="150" src="/img/post-netbouncer-1.png"/></div>
 
 #### Probing plan design
 
-    模型：每一个link都有个成功概率，一条路径上link的成功概率之积就是路径成功概率.
+   模型：每一个link都有个成功概率，一条路径上link的成功概率之积就是路径成功概率.
 
-    假设：failures are **independent**
+   假设：failures are **independent**
 
-    目标：link-identifiable 的 probe plan
+   目标：link-identifiable 的 probe plan
 
-    ![](/img/post-netbouncer-3.png)
+   ![](/img/post-netbouncer-3.png)
 
-    ** Theorem 1. (sufficient probing theorem).** In a Clos network with k layers of switches (k ≥ 1), by probing all paths from the servers to the top-layer switches, we can uniquely infer the link success probabilities from the measured path success probabilities, if and only if at least one path with success probability 1 passes each switch
+   **Theorem 1. (sufficient probing theorem)**. In a Clos network with k layers of switches (k ≥ 1), by probing all paths from the servers to the top-layer switches, we can uniquely infer the link success probabilities from the measured path success probabilities, if and only if at least one path with success probability 1 passes each switch
+   注意：Netbouncer与其他最小化probe数量的工作不同。Netbouncer不以最小化probe数量作为目标。
 
-    注意：Netbouncer与其他最小化probe数量的工作不同。Netbouncer不以最小化probe数量作为目标。
 
 #### Efficient path probing via IP-in-IP
 
