@@ -44,7 +44,7 @@ tags:
 
 #### 2.Efficient path probing via IP-in-IP
 
-   ![](/img/post-netbouncer-2.png)
+   <img width="550" height="350" src="/img/post-netbouncer-2.png"/>
 
    probing采用一种IP-in-IP的packet bouncing的方式。以前的方案中ping-based的probing is unable to pinpoint the routing path; Tracert consumes switch CPUs. switch CPU的资源消耗有限制（[007](https://www.usenix.org/system/files/conference/nsdi18/nsdi18-arzani.pdf)）。
 
@@ -71,13 +71,14 @@ tags:
 
    模型使用Non-convex representation （比convex representation效果好），求解方法：coordinate descent（[坐标下降法](https://zhuanlan.zhihu.com/p/52300427)),不用梯度下降的原因是运行时间慢
 
-   ![](/img/post-netbouncer-5.png)
+   <img width="350" height="850" src="/img/post-netbouncer-5.png"/>
+
 
 ### Implementation and evaluation
 
 - 仿真：与hop-by-hop比较性能非常接近，device failure detection对避免假阴性必不可少，特殊正则化vs standard正则化，随机梯度下降（SGD）vs 坐标下降（CD）收敛时间，正则化参数lamda对假阳性假阴性的影响，与已有系统比较： [deTector](https://www.usenix.org/system/files/conference/atc17/atc17-peng.pdf), NetScope, and KDD14
 
-   ![](/img/post-netbouncer-6.png)
+   <img width="450" height="450" src="/img/post-netbouncer-6.png"/>
 
 - Testbed： controller、agent 架构与Pingmesh类似
 
