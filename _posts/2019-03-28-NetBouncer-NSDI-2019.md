@@ -26,9 +26,9 @@ tags:
 
 ### Design Overview
 
-<div align=center><img width="150" height="150" src="/img/post-netbouncer-1.png"/></div>
+<img width="350" height="350" src="/img/post-netbouncer-1.png"/>
 
-#### Probing plan design
+#### 1.Probing plan design
 
    模型：每一个link都有个成功概率，一条路径上link的成功概率之积就是路径成功概率.
 
@@ -42,7 +42,7 @@ tags:
    注意：Netbouncer与其他最小化probe数量的工作不同。Netbouncer不以最小化probe数量作为目标。
 
 
-#### Efficient path probing via IP-in-IP
+#### 2.Efficient path probing via IP-in-IP
 
    ![](/img/post-netbouncer-2.png)
 
@@ -51,7 +51,7 @@ tags:
    Packet bouncing：发probe的server选定一个交换机，交换机会将probe弹回。sender和receiver是同一个交换机。链路被双向探测。
    
 
-#### Failure inference from path measurements
+#### 3.Failure inference from path measurements
 
    大致思路：定理一提供了一个能够解出唯一解的充要条件（每个交换机至少有一条成功概率为1的路径经过）。通过这个条件，可以将clos网络分为可解部分和非可解部分。可解部分可通过阈值筛选出故障的链路，非可解部分则认为是交换机故障。
 
