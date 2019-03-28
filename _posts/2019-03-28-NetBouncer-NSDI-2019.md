@@ -89,4 +89,5 @@ tags:
 
 ### NetBouncer的局限
 - 假设所有probing packets 会经历与应用数据一样的failures
+- 针对某些特定数据包的错误 如packet black hole，ACL或防火墙误配置等 无法定位，因为NetBouncer scan的是大量的IP地址
 - 理论上不能保证零假阳性和零假阴性
