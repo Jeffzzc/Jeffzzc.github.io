@@ -38,7 +38,8 @@ tags:
 
    ![](/img/post-netbouncer-3.png)
 
-   **Theorem 1. (sufficient probing theorem)**. In a Clos network with k layers of switches (k ≥ 1), by probing all paths from the servers to the top-layer switches, we can uniquely infer the link success probabilities from the measured path success probabilities, if and only if at least one path with success probability 1 passes each switch
+   **Theorem 1. (sufficient probing theorem 证明见附录)**. In a Clos network with k layers of switches (k ≥ 1), by probing all paths from the servers to the top-layer switches, we can uniquely infer the link success probabilities from the measured path success probabilities, if and only if at least one path with success probability 1 passes each switch
+
    注意：Netbouncer与其他最小化probe数量的工作不同。Netbouncer不以最小化probe数量作为目标。
 
 
@@ -46,7 +47,7 @@ tags:
 
    <img width="450" height="250" src="/img/post-netbouncer-2.png"/>
 
-   probing采用一种IP-in-IP的packet bouncing的方式。以前的方案中ping-based的probing is unable to pinpoint the routing path; Tracert consumes switch CPUs. switch CPU的资源消耗有限制（[007](https://www.usenix.org/system/files/conference/nsdi18/nsdi18-arzani.pdf)）。
+   Probing采用一种IP-in-IP的packet bouncing的方式。以前的方案中ping-based的probing is unable to pinpoint the routing path; Tracert consumes switch CPUs. switch CPU的资源消耗有限制（[007](https://www.usenix.org/system/files/conference/nsdi18/nsdi18-arzani.pdf)）。
 
    Packet bouncing：发probe的server选定一个交换机，交换机会将probe弹回。sender和receiver是同一个交换机。链路被双向探测。
    
@@ -55,7 +56,7 @@ tags:
 
    大致思路：定理一提供了一个能够解出唯一解的充要条件（每个交换机至少有一条成功概率为1的路径经过）。通过这个条件，可以将clos网络分为可解部分和非可解部分。可解部分可通过阈值筛选出故障的链路，非可解部分则认为是交换机故障。
 
-   ***但问题是：how can one infer the link probabilities from the end-to-end path measurements ?***
+   ***问题：how can one infer the link probabilities from the end-to-end path measurements?***
 
    **挑战**：数据不一致。包括不精准的测量引起overfit、意外的数据丢包。大部分会引起假阳性问题（把一个正常链路视作问题链路）
 
