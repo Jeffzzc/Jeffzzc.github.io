@@ -26,7 +26,7 @@ tags:
 
 ### Design Overview
 
-<img width="350" height="350" src="/img/post-netbouncer-1.png"/>
+<img width="450" height="450" src="/img/post-netbouncer-1.png"/>
 
 #### 1.Probing plan design
 
@@ -44,7 +44,7 @@ tags:
 
 #### 2.Efficient path probing via IP-in-IP
 
-   <img width="550" height="350" src="/img/post-netbouncer-2.png"/>
+   <img width="450" height="250" src="/img/post-netbouncer-2.png"/>
 
    probing采用一种IP-in-IP的packet bouncing的方式。以前的方案中ping-based的probing is unable to pinpoint the routing path; Tracert consumes switch CPUs. switch CPU的资源消耗有限制（[007](https://www.usenix.org/system/files/conference/nsdi18/nsdi18-arzani.pdf)）。
 
