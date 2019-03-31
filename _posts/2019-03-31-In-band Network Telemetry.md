@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      In-band Network Telemetry(INT)
+title:      In-band Network Telemetry (INT)
 subtitle:   In-band Network Telemetry
 date:       2019-3-31
 author:     Yiran
