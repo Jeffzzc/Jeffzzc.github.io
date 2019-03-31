@@ -13,8 +13,8 @@ tags:
 
 ### [In-band Network Telemetry(Specification)](https://p4.org/assets/INT-current-spec.pdf)
 
-### [Towards Knowledge-Defined Networking using In-band Network Telemetry](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8406169&tag=1)
+### [Towards Knowledge-Defined Networking using In-band Network Telemetry](https://ieeexplore.ieee.org/document/8406169)
 
-### [INTCollector: A High-performance Collector for In-band Network Telemetry](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8584997)
+### [INTCollector: A High-performance Collector for In-band Network Telemetry](https://ieeexplore.ieee.org/document/8584997)
 
 
