@@ -34,16 +34,16 @@ tags:
 - Single-queue (M/G/n)：软件dispatch. requests are kept in a single queue and dispatched to a core when it becomes idle (late binding)
 - Multiple queues augmented with work stealing：硬件dispatch加上  idle cores steal requests from the queues of other cores（已知最优）
 
-   基于DPDK实现
+基于DPDK实现
 
-   实验结果表明能够大大提升99th percentile的latency 同时保持高吞吐。实验很充分
+实验结果表明能够大大提升99th percentile的latency 同时保持高吞吐。实验很充分
 
 
-   还评估了以下方面: item-size分布的影响（大request占比、size变化），在read-intensive and write-intensive workloads下的性能, scales with the amount of available network bandwidth, load balancing across cores（尽管request的数目不同的核上不同, 但是packet数目比较均匀）, adapt to changing workload conditions 
+还评估了以下方面: item-size分布的影响（大request占比、size变化），在read-intensive and write-intensive workloads下的性能, scales with the amount of available network bandwidth, load balancing across cores（尽管request的数目不同的核上不同, 但是packet数目比较均匀）, adapt to changing workload conditions 
 
-   ***实质上是一个tradeoff：拿大request的时间换小request的时间，而大request的占比很小（小于1%）, 小request的完成时间基本都在99th以内***
+***实质上是一个tradeoff：拿大request的时间换小request的时间，而大request的占比很小（小于1%）, 小request的完成时间基本都在99th以内***
 
-   **缺点**:除了在高负载下对大request的latency有延迟（相比size-unaware中最好的）, 对CPU的消耗比其他大，会提前saturate CPU, 因为core0需要适应性计算threshold
+**缺点**:除了在高负载下对大request的latency有延迟（相比size-unaware中最好的）, 对CPU的消耗比其他大，会提前saturate CPU, 因为core0需要适应性计算threshold
 
 ### My thinking
 
