@@ -4,7 +4,7 @@ title:      Rate-Aware Flow Scheduling Infocom 2017
 subtitle:   Rate-Aware Flow Scheduling for Commodity Data Center Networks
 date:       2019-4-2
 author:     Yiran
-header-img: img/post-bg-geek.jpg
+header-img: img/home-bg-geek.jpg
 catalog: true
 tags:
     - Flow Scheduling
