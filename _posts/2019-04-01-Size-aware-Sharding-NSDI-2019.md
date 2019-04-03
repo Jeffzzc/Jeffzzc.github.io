@@ -4,7 +4,7 @@ title:      Size-aware Sharding NSDI 2019
 subtitle:   Size-aware Sharding For Improving Tail Latencies in In-memory Key-value Stores
 date:       2019-4-1
 author:     Yiran
-header-img: img/post-bg-rwd.jpg
+header-img: img/post-bg-os-metro.jpg
 catalog: true
 tags:
     - Key-value Store
