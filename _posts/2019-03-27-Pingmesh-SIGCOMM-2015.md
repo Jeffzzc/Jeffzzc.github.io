@@ -10,7 +10,6 @@ tags:
     - Measurement in Datacenter
     - Network Troubleshooting
 ---
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 ## [Pingmesh: A Large-Scale System for Data Center Network Latency Measurement and Analysis](https://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p139.pdf)
 
 ### 核心思想
