@@ -4,7 +4,7 @@ title:      NetBouncer NSDI 2019
 subtitle:   Failure Localization in Data Center Networks
 date:       2019-3-28
 author:     Yiran
-header-img: img/post-bg-kuaidi.jpg
+header-img: img/post-bg-sea.jpg
 catalog: true
 tags:
     - Machine Learning
