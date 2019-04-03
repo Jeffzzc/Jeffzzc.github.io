@@ -21,7 +21,7 @@ tags:
 <img width="450" height="450" src="/img/post-rax-2.png"/>
 
 - **Data generate rate varies widely across applications and changes dynamically even within an application**: 论文测量了两个真实的应用的数据产生速率.
-Data generation rate depends on various factors including application computational complexity, the CPU speed or the I/O throughput of storage devices. It depends only on the server components, such as CPU cores and hard disks, but not on the network. The data generation rate (rg) determines the real demand
+Data generation rate depends on various factors including application computational complexity, the CPU speed or the I/O throughput of storage devices. It depends only on the server components, such as CPU cores and hard disks, but not on the network. The data generation rate ($r_{g}$) determines the real demand
 for the network.
 
 - **Data generation rate impact flow completion times**: A toy example. Flow A and Flow B. The flow sizes are 100MB and 150MB, and the data generation rates are 5 Gbps and 10 Gbps respectively.
@@ -31,19 +31,19 @@ for the network.
 ### Design
 ***挑战在于如何在不更改应用的前提下，获取data generation rate.***
 
-- 从rg与rt的关系考虑，得到结论：**当buffer足够大，rc能够准确估计rg**
+- 从$r_{g}$与$r_{t}$的关系考虑，得到结论：**当buffer足够大，$r_{c}$能够准确估计rg**
 
-   rg = rt时, rg = rt = rc; 
+   $r_{g}$ = $r_{t}$时, $r_{g}$ = $r_{t}$ = $r_{c}$; 
 
-   rg > rt时, network is bottleneck, data will get buffered. If the buffer is sufficient: data copy from application will not be blocked. rg = rc > rt; If the buffer is inufficient: data copy from application will be blocked. rg > rc >= rt;
+   $r_{g}$ > $r_{t}$时, network is bottleneck, data will get buffered. If the buffer is sufficient: data copy from application will not be blocked. $r_{g}$ = $r_{c}$ > $r_{t}$; If the buffer is inufficient: data copy from application will be blocked. $r_{g}$ > $r_{c}$ >= $r_{t}$;
 
 - 计算剩余完成时间
    
    <img width="250" height="250" src="/img/post-rax-4.png"/>
 
-   rg根据rc来估计: copy的数据量/时间间隔 然后exponentially weighted moving average (EWMA).
+   $r_{g}$根据$r_{c}$来估计: copy的数据量/时间间隔 然后exponentially weighted moving average (EWMA).
 
-   br根据已发送size估计(适用于数据中心重尾分布流量);
+   $b_{r}$根据已发送size估计(适用于数据中心重尾分布流量);
 
    <img width="250" height="250" src="/img/post-rax-5.png"/>
 
