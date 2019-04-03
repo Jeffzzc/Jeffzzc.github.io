@@ -49,7 +49,7 @@ tags:
 
    Probing采用一种IP-in-IP的packet bouncing的方式。以前的方案中ping-based的probing is unable to pinpoint the routing path; Tracert consumes switch CPUs. switch CPU的资源消耗有限制（[007](https://www.usenix.org/system/files/conference/nsdi18/nsdi18-arzani.pdf)）。
 
-   Packet bouncing：发probe的server选定一个交换机，交换机会将probe弹回。sender和receiver是同一个交换机。链路被双向探测。
+   ```Packet bouncing```: 发probe的server选定一个交换机，交换机会将probe弹回。sender和receiver是同一个交换机。链路被双向探测。
    
 
 #### 3.Failure inference from path measurements
@@ -64,7 +64,7 @@ tags:
 
    ![](/img/post-netbouncer-4.png)
 
-   第二项是一个特殊的正则化。有两个特性：(a), it has a two-direction penalty; (b), because of the quadratic term, the closer to 1 the greater the slope. 
+   第二项是一个特殊的正则化。有两个特性：```(a), it has a two-direction penalty; (b), because of the quadratic term, the closer to 1 the greater the slope.``` 
 
    特性a：The regularization term tends to “pull” the good links to be better, while “push” the bad links to be worse, while the product of link probabilities will stay approximately the same
 
