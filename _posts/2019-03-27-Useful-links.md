@@ -10,6 +10,7 @@ tags:
     - Useful links
 ---
 - [Markdown](https://www.jianshu.com/p/191d1e21f7ed)
+- [Mathjax](http://docs.mathjax.org/en/latest/tex.html)
 - [Linux net命令](https://linux.cn/article-5461-1.html)
 - [运行内核选择拥塞控制算法](http://bbs.chinaunix.net/thread-4057569-1-1.html)
 - [Linux ixgbe设置](https://blog.csdn.net/vah101/article/details/40077937)
