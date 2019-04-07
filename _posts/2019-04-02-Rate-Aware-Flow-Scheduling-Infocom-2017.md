@@ -31,7 +31,7 @@ for the network.
 ### Design
 ***挑战在于如何在不更改应用的前提下，获取data generation rate.***
 
-- 从$r_{g}$与$r_{t}$的关系考虑，得到结论：**当buffer足够大，$r_{c}$能够准确估计rg**
+- 从$r_{g}$与$r_{t}$的关系考虑，得到结论：**当buffer足够大，$r_{c}$能够准确估计$r_{g}$**
 
    $r_{g}$ = $r_{t}$时, $r_{g}$ = $r_{t}$ = $r_{c}$; 
 
