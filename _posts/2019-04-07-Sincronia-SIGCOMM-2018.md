@@ -19,15 +19,15 @@ tags:
 
 ### Design
    
-   <img width="350" height="350" src="/img/post-sincronia-1.png"/>
+   <img width="450" height="450" src="/img/post-sincronia-1.png"/>
 
    核心算法有两个, 一个是确定coflow的ordering, 一个是如何从offline算法转化为online算法
 
 - Coflow ordering: primal-dual based greedy algorithm. Bottleneck-Select-Scale-Iterate (BSSI)
    
    本质上还是逼近shortest remaining time first原则。 四步：```bottleneck```: finds the most bottlenecked ingress or egress port;  ```select```: it chooses the coflow with largest remaining weighted processing time at port b and places this coflow the last among all unordered coflows; ```scale```: scales the weights of all unordered coflows to capture how ordering the coflow chosen in the second step impacts the completion time of all remaining coflows; ```iterate```: simply iterate on the set of unordered flows until all coflows are ordered.
-   <img width="250" height="250" src="/img/post-sincronia-2.png"/>
-   <img width="350" height="350" src="/img/post-sincronia-3.png"/>
+   <img width="350" height="350" src="/img/post-sincronia-2.png"/>
+   <img width="450" height="450" src="/img/post-sincronia-3.png"/>
 
 
 - From offline to online
