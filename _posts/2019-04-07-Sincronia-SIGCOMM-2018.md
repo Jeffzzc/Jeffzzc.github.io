@@ -15,7 +15,7 @@ tags:
 
 设计一个能够基于**任何**支持优先级调度的传输协议的coflow调度机制。最大的贡献是理论证明了：只要给定一个合适的coflow的ordering, 任何per-flow的rate allocation按照这个ordering优先级调度, 都能够达到平均coflow完成时间是最优调度的4$\times$以内。
 
-**Motivation**: 以前的coflow调度机制(Varys, Aalo等), 其核心思想都是控制器知道每个coflow的相关信息(source port,destination port,size等), 然后根据可用带宽给每个coflow分配速率(包括coflow内每条流的速率分配), 然后enforce到端, 当新的coflow到达或结束时重新计算。这种方式很大的一个问题是实际中需要对每条流进行速率分配, 开销大. 因此Sincronia的思想就是解除```per-flow rate allocation```这个限制, 将rate allocation和具体的优先级调度下放到底层传输协议完成。
+**Motivation**: 以前的coflow调度机制(Varys[http://web.eecs.umich.edu/~mosharaf/Readings/Varys.pdf], Aalo[http://www.mosharaf.com/wp-content/uploads/aalo-talk-sigcomm15-08192015-v2.pdf]等), 其核心思想都是控制器知道每个coflow的相关信息(source port,destination port,size等), 然后根据可用带宽给每个coflow分配速率(包括coflow内每条流的速率分配), 然后enforce到端, 当新的coflow到达或结束时重新计算。这种方式很大的一个问题是实际中需要对每条流进行速率分配, 开销大. 因此Sincronia的思想就是解除```per-flow rate allocation```这个限制, 将rate allocation和具体的优先级调度下放到底层传输协议完成。
 
 ### Design
    
