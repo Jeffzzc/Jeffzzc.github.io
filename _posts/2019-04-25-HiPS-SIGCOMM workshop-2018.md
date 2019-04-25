@@ -46,4 +46,3 @@ tags:
 
 
 
-;### My thinking
