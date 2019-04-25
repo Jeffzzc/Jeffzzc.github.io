@@ -4,7 +4,7 @@ title:      HiPS SIGCOMM workshop 2018
 subtitle:   Hierarchical Parameter Synchronization for DML
 date:       2019-4-25
 author:     Yiran
-header-img: img/post-bg-desert.jpg
+header-img: img/post-bg-desert.jpeg
 catalog: true
 tags:
     - Machine Learning
