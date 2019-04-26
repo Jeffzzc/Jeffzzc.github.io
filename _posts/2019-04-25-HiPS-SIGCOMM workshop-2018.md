@@ -13,13 +13,13 @@ tags:
 ## [HiPS: Hierarchical Parameter Synchronization in Large-Scale Distributed Machine Learning](https://dl.acm.org/citation.cfm?id=3229544)
 ### 核心思想 
 
-设计了一种新的分布式机器学习(DML)参数同步算法。
+设计了一种新的分布式机器学习(DML)参数同步算法。最大意义在于说明了拓扑对参数同步算法提供的优化空间。
 
 ### Background and Motivation
 
 已有的参数同步算法:
 
-- PS-based synchronization (PS). 集中式, 较为常用(Tensorflow, Caffe, MxNet等). 两种角色: 参数服务器（Paremeter server）和 worker. Worker: push and pull模式. Worker生成参数的gradients, push给参数服务器, 参数服务器aggregate the gradients等待workers to pull them back.
+- PS-based synchronization (PS). 集中式, 较为常用(Tensorflow, Caffe, MXNet等). 两种角色: 参数服务器（Paremeter server）和 worker. Worker: push and pull模式. Worker生成参数的gradients, push给参数服务器, 参数服务器aggregate the gradients等待workers to pull them back.
 
 <img width="450" height="450" src="/img/post-HIPS-1.png"/>
 
@@ -39,10 +39,18 @@ tags:
 
 ### Design
 
-- 采用 server-centric (Bcube、DCell等)而不是 Fat-tree 这类 switch-centric的物理拓扑: server-centric最重要的优势是交换机不是直连的, RDMA的PFC最多只会传递一跳, 而server有足够大的buffer去吸收, 因此不会出现CLOS网络下PFC的死锁问题.
+- 采用 server-centric ([Bcube](http://ccr.sigcomm.org/online/files/p63.pdf)、[DCell](http://www.sigcomm.org/sites/default/files/ccr/papers/2008/October/1402946-1402968.pdf)、[Torus](http://bnrg.cs.berkeley.edu/~randy/Courses/CS294.S13/7.2.pdf)等)而不是 Fat-tree 这类 switch-centric的物理拓扑: server-centric最重要的优势是交换机不是直连的, RDMA的PFC最多只会传递一跳, 而server有足够大的buffer去吸收, 因此不会出现CLOS网络下PFC的死锁问题.
+
+  server-centic:服务器和交换价都具有转发功能; switch-centric:只有交换机具有转发功能
+
+- Synchronization is divided into multiple stages. Each stage possesses two parts (i.e. push+pull or diffuse+collect or scatter+gather) to complete a specific synchronization algorithm, and servers aggregates the partial results before entering the higher-stage synchronization.
+
+<img width="450" height="800" src="/img/post-HIPS-4.png"/>
 
 
 ### Implementation and evaluation
+
+理论计算global synchronization time (GST). 在Bcube、Torus拓扑下比较HiPS PS MS RS.
 
 
 
