@@ -35,7 +35,7 @@ tags:
 
 - PS: 由于通常由CLOS网络构建, 不可能所有server与参数服务器都在一个rack下, 必然存在跨Rack通信, 会有RDMA的一些问题: PFC deadlock, congestion spreading. ```本质上是RDMA的拥塞控制在大规模网络的问题```
 
-- MS 和 RS: 如果用Fat-tree这类CLOS网络构建, 问题与PS的相同。如果构建相应的物理拓扑网络, 不实际: MS需要N个服务器每个有N-1快网卡. RS ring的大规模网络鲁棒性差。
+- MS 和 RS: 如果用Fat-tree这类CLOS网络构建, 问题与PS的相同。如果构建相应的物理拓扑网络, 不实际: MS需要N个服务器每个有N-1块网卡. RS ring的大规模网络鲁棒性差。
 
 ### Design
 
