@@ -13,7 +13,7 @@ tags:
 ## [HiPS: Hierarchical Parameter Synchronization in Large-Scale Distributed Machine Learning](https://dl.acm.org/citation.cfm?id=3229544)
 ### 核心思想 
 
-设计了一种新的分布式机器学习(DML)参数同步算法。最大意义在于说明了拓扑对参数同步算法提供优化空间。
+设计了一种新的分布式机器学习(DML)参数同步算法。最大意义在于说明了拓扑对参数同步算法提供了优化空间。
 
 ### Background and Motivation
 
