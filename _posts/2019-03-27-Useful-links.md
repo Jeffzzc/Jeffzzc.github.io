@@ -19,4 +19,5 @@ tags:
 - [Scapy-HTTP](https://github.com/invernizzi/scapy-http)
 - [OpenNFP](https://github.com/open-nfpsw)
 - [Mac minicom](https://blog.csdn.net/u010285246/article/details/72354038)
-
+- [Datacenter as a computer](http://www.cs.yale.edu/homes/yu-minlan/teach/csci599-fall12/papers/dccomputer.pdf)
+- [How to Read](http://www.cs.princeton.edu/courses/archive/fall13/cos597E/papers/howtoread.pdf)
