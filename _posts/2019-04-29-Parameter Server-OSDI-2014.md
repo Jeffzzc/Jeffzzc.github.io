@@ -51,10 +51,18 @@ $$
 
 <img width="450" height="450" src="/img/post-PS-3.png"/>
 
-- (key,value) Vectors
+- (Key,Value) Vectors.
+
+   例如在前面的Risk minimization问题中，key：属性 value：对应的权重
 -  Range Push and Pull
+   
+   
 -  Flexible Consistency
+ 
+   
 -  User-Defined Filters
+
+
 
 
 
