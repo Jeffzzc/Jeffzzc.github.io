@@ -22,9 +22,17 @@ Machine Learning.
 
 Feature extraction 处理原始训练数据, 比如 documents, images and user query logs 来获得 ```feature vectors```, 每一个feature就是训练数据的一个属性 （attribute）. 对原始训练数据的 preprocessing 由已有的 MapReduce 等框架完成。
 
+论文给了两类模型：Risk minimization（有监督算法一类，比如预测问题，降低预测错误率）和 Generative Models（无监督算法一类，比如从数据中提取主题，LDA算法）.
+
+Risk minimization：分布式梯度下降算法。样本 $x$ 预测值 $y$ (是否被点击). $x$可用许多属性描述, 每个属性有一个权重$w_{i}$. 学习目标：学习向量$w$. 则可根据$\sum_{i=1}{d}x_{i}w_{i]$的值预测是否被点击. 损失函数$loss(x,y,w)$代表预测错误率，$\omega$用于惩罚模型的复杂度. 则最终的优化目标函数为：
+
+$$
+F(W) = \sum{i=1}{n}loss(x_{i},y{i},w_{i}) + \omega(w)
+$$
 
 <img width="450" height="450" src="/img/post-PS-1.png"/>
 
+算法如下：
 
 <img width="450" height="650" src="/img/post-PS-2.png"/>
 
