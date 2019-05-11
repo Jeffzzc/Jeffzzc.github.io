@@ -14,6 +14,7 @@ tags:
 ### 核心思想 
 
 分布式机器学习架构：Parameter Server. A third generation open source implementation of a parameter server that focuses on the systems aspects of distributed inference.
+首次将分布式参数服务器架构扩展到支持1000台服务器规模.
 
 ### Background 
 Machine Learning.
@@ -40,9 +41,9 @@ $$
 
 ### Challenges
 
-- Communication
+- Communication：每次模型更新都发送key value 开销大；通信同步带来barrier导致性能下降
 
-- Fault Tolerance
+- Fault Tolerance：规模大 机器failure多
 
 
 
@@ -50,10 +51,16 @@ $$
 
 <img width="450" height="450" src="/img/post-PS-3.png"/>
 
+- (key,value) Vectors
+-  Range Push and Pull
+-  Flexible Consistency
+-  User-Defined Filters
+
+
 
 ### Implementation and evaluation
 
-
+两个算法：Sparse Logistic Regression 和 LDA
 
 
 
