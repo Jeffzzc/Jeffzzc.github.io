@@ -56,7 +56,7 @@ $$
    例如在前面的Risk minimization问题中，key：属性 value：对应的权重
 -  Range Push and Pull
    
-   
+   算法1中每个worker将它全部的梯度push给参数服务器，然后pull更新后的weight. Range Push and Pull指支持用户指定范围的push和pull. $w.push(R,dest)$ 指将在范围$R$中的key push给destination，destination可以是一个指定的node或一个node group（如server group）.
 -  Flexible Consistency
  
    
