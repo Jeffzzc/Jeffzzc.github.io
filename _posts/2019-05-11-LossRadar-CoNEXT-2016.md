@@ -10,7 +10,7 @@ tags:
     - Network Troubleshooting
 ---
 
-## [LossRadar: Fast Detection of Lost Packets in Data Center Networks](https://www.usenix.org/system/files/conference/osdi14/osdi14-paper-li_mu.pdf)
+## [LossRadar: Fast Detection of Lost Packets in Data Center Networks](http://minlanyu.seas.harvard.edu/writeup/conext16.pdf)
 ### 核心思想 
 
 
