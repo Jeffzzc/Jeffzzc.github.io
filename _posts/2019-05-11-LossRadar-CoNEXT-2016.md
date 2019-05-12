@@ -31,7 +31,7 @@ tags:
    - **Capturing location information**: 知道具体位置才能快速采取action, 交换机 link 还是 host NIC
    - **Capturing packet header information**: 需要区分丢包原因采取针对性措施，因此很多详细信息必不可少：五元组，timing，loss pattern等.
 
-   <img width="600" height="300" src="/img/post-loss-1.png"/>
+   <img width="600" height="400" src="/img/post-loss-1.png"/>
 
 
 3. 已有方案的不足：
@@ -40,7 +40,7 @@ tags:
    - **Packet mirroring at switches**: 漏掉丢包类型和数量
    - **Counters at switches**: 因为丢包原因多种并且不确定，很难提前配置好对应的counter. [FlowRadar](https://www.usenix.org/system/files/conference/nsdi16/nsdi16-paper-li-yuliang.pdf)（NSDI 2016）使用per-flow的counter，但是需要多交换机的counter对比同步才能知道丢包，并且存储消耗与monitor的流数目成正比.
 
-   <img width="600" height="300" src="/img/post-loss-2.png"/>
+   <img width="600" height="400" src="/img/post-loss-2.png"/>
 
 
 ### Design Overview
