@@ -51,27 +51,44 @@ $$
 
 <img width="450" height="450" src="/img/post-PS-3.png"/>
 
-- (Key,Value) Vectors.
+- **(Key,Value) Vectors**
 
    例如在前面的Risk minimization问题中，key：属性 value：对应的权重
--  Range Push and Pull
+- **Range Push and Pull**
    
    算法1中每个worker将它全部的梯度push给参数服务器，然后pull更新后的weight. Range Push and Pull指支持用户指定范围的push和pull. $w.push(R,dest)$ 指将在范围$R$中的key push给destination，destination可以是一个指定的node或一个node group（如server group）.
--  Flexible Consistency
- 
+
+- **Asynchronous Tasks and Dependency**
+
+   一个task：a push or a pull that a ```worker``` issues to servers. 或者仅仅是user-defined function that the ```scheduler``` issues to any node. 一个Task也可以有多个subtask，比如在算法1中 task WorkerIterate 中就包含一个pull task和一个push task.
+
+   Task 是异步执行的：caller可以在issue一个task之后立即执行接下来的运算. caller收到callee的reply标记为task的完成. callee默认并行执行task，如果caller想要顺序执行task，则可以在task间加入```execute-after-finish```dependency.
+
+- **Flexible Consistency**
    
--  User-Defined Filters
+   task的并行执行对提升系统性能有重要影响。但是并行执行会带来数据不一致问题（有dependency的task间）。数据不一致问题会使得worker使用的不是最新的参数，算法收敛时间增加. 参数服务器架构提供了三种灵活的数据一致性架构：
 
+   （1）Sequential：所有task完全顺序执行. 也叫Bulk Synchronous Processing.
 
+   （2）Eventual：所有task都有可能同时开始执行. 只推荐用于对与delay不敏感的算法.
+
+   （3）Bounded Delay：设置一个最大delay时间$\tau$, 为新的task被前面的task阻塞的最大时间. 相比前两种较为灵活.
+   
+- **User-Defined Filters**
+
+   支持选择性地同步部分（key，value）pairs. 比如选择性地同步对weight影响最大的参数 (KKT filter等).
 
 
 
 ### Implementation and evaluation
 
 - Implementation
+  Servers 使用一致性哈希存储（key，value）pairs, 对于 fault tolerance, 使用链式复制. 
 
 - Evaluation
-两个算法：Sparse Logistic Regression 和 LDA
+两个算法：Sparse Logistic Regression 和 LDA 
+
+Sketch.
 
 
 
