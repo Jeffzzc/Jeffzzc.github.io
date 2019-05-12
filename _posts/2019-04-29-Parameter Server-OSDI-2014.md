@@ -66,7 +66,7 @@ $$
 
 - **Flexible Consistency**
    
-   task的并行执行对提升系统性能有重要影响。但是并行执行会带来数据不一致问题（有dependency的task间）。数据不一致问题会使得worker使用的不是最新的参数，算法收敛时间增加. 参数服务器架构提供了三种灵活的数据一致性架构：
+   task的并行执行对提升系统性能有重要影响. 但是并行执行会带来node的数据不一致问题（有dependency的task间）. 数据不一致问题会使得worker使用的不是最新的参数，算法收敛时间增加. 参数服务器架构提供了三种灵活的数据一致性模型：
 
    （1）Sequential：所有task完全顺序执行. 也叫Bulk Synchronous Processing.
 
@@ -83,12 +83,18 @@ $$
 ### Implementation and evaluation
 
 - Implementation
-  Servers 使用一致性哈希存储（key，value）pairs, 对于 fault tolerance, 使用链式复制. 
+
+   Servers 使用一致性哈希存储（key，value）pairs; 对于 fault tolerance, 使用链式复制. 
 
 - Evaluation
-两个算法：Sparse Logistic Regression 和 LDA 
 
-Sketch.
+   两个算法：Sparse Logistic Regression 和 LDA. Sketch.
+
+   <img width="450" height="450" src="/img/post-PS-4.png"/>
+
+   <img width="650" height="450" src="/img/post-PS-5.png"/>
+
+
 
 
 
