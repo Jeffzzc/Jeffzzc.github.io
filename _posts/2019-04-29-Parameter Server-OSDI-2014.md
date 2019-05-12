@@ -13,8 +13,8 @@ tags:
 ## [Scaling Distributed Machine Learning with the Parameter Server](https://www.usenix.org/system/files/conference/osdi14/osdi14-paper-li_mu.pdf)
 ### 核心思想 
 
-分布式机器学习架构：Parameter Server. A third generation open source implementation of a parameter server that focuses on the systems aspects of distributed inference.
-首次将分布式参数服务器架构扩展到支持1000台服务器规模.
+分布式机器学习架构：Parameter Server. 首次将分布式参数服务器架构扩展到支持1000台服务器规模. A third generation open source implementation of a parameter server that focuses on the systems aspects of distributed inference.
+
 
 ### Background 
 Machine Learning.
