@@ -68,6 +68,9 @@ $$
 
 ### Implementation and evaluation
 
+- Implementation
+
+- Evaluation
 两个算法：Sparse Logistic Regression 和 LDA
 
 
