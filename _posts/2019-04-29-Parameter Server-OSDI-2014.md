@@ -90,7 +90,7 @@ $$
 
    两个算法：Sparse Logistic Regression 和 LDA. Sketch.
 
-   <img width="450" height="450" src="/img/post-PS-4.png"/>
+   <img width="350" height="350" src="/img/post-PS-4.png"/>
 
    <img width="650" height="450" src="/img/post-PS-5.png"/>
 
