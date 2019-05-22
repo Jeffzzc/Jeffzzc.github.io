@@ -10,7 +10,7 @@ tags:
     - Key-value Store
 ---
 
-## [Size-aware Sharding For Improving Tail Latencies in In-memory Key-value Stores](https://www.usenix.org/system/files/nsdi19spring_didona_prepub.pdf)
+## [Size-aware Sharding For Improving Tail Latencies in In-memory Key-value Stores](https://arxiv.org/pdf/1802.00696.pdf)
 
 ### 解决问题
 
