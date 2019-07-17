@@ -10,7 +10,6 @@ tags:
     - Flow Scheduling
 ---
 
-## [Sincronia: Near-Optimal Network Design for Coflows](http://www.cs.cornell.edu/~ragarwal/pubs/sincronia.pdf)
 ### 核心思想 
 
 设计一个能够基于**任何**支持优先级调度的传输协议的coflow调度机制。最大的贡献是理论证明了：只要给定一个合适的coflow的ordering, 任何per-flow的rate allocation按照这个ordering优先级调度, 都能够达到平均coflow完成时间是最优调度的4$\times$以内。
@@ -53,3 +52,6 @@ tags:
 ### My thinking
 
 仍然需要知道size等先验信息
+
+### 参考文献
+[Sincronia: Near-Optimal Network Design for Coflows](http://www.cs.cornell.edu/~ragarwal/pubs/sincronia.pdf)

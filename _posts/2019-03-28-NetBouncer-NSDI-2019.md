@@ -11,8 +11,6 @@ tags:
     - Network Troubleshooting
 ---
 
-## [NetBouncer: Active Device and Link Failure Localization in Data Center Networks](https://www.usenix.org/system/files/nsdi19-tan.pdf)
-
 ### 核心思想
 
 通过IP-in-IP 的probe探测，定位数据中心故障，包括device故障和link故障。（微软）
@@ -91,3 +89,7 @@ tags:
 - 假设所有probing packets 会经历与应用数据一样的failures
 - 针对某些特定数据包的错误 如packet black hole，ACL或防火墙误配置等 无法定位，因为NetBouncer scan的是大量的IP地址
 - 理论上不能保证零假阳性和零假阴性
+
+### 参考文献
+[NetBouncer: Active Device and Link Failure Localization in Data Center Networks](https://www.usenix.org/system/files/nsdi19-tan.pdf)
+

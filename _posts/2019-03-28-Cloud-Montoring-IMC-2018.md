@@ -10,8 +10,6 @@ tags:
     - Measurement in Datacenter
 ---
 
-## [Cloud Datacenter SDN Monitoring: Experiences and Challenges](https://www.microsoft.com/en-us/research/uploads/prod/2018/09/CloudDatacenter.pdf)
-
 ### 核心思想
 
 指出VNET的monitor和physical网路的monitor不同
@@ -47,5 +45,8 @@ tags:
 
 - **customer address与physical address的mapping会对测量的latency产生影响，特别是大的VNET**. When a VM starts a network flow to a given CA, the CA ⇒ PA mapping for the flow is queried from the userspace agent and cached in the kernel datapath; subsequent packets leverage this cache.————>large的VNET，地址转换容易cache miss
 **passive的monitor是以后VNET monitor的趋势**
+
+### 参考文献
+[Cloud Datacenter SDN Monitoring: Experiences and Challenges](https://www.microsoft.com/en-us/research/uploads/prod/2018/09/CloudDatacenter.pdf)
 
 

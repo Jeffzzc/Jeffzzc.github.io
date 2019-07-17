@@ -10,7 +10,6 @@ tags:
     - Flow Scheduling
 ---
 
-## [Rate-Aware Flow Scheduling for Commodity Data Center Networks](https://ieeexplore.ieee.org/document/8057082/)
 ### 核心思想 
 
 已有流调度工作（[pFabric](https://web.stanford.edu/~skatti/pubs/sigcomm13-pfabric.pdf), [PASE](https://yi-ran.github.io/2019/03/29/PASE-SIGCOMM-2014/), and [PIAS](https://baiwei0427.github.io/papers/pias-ton.pdf)）根据 Shortest Remaining Time First (SRTF)进行调度，认为剩余完成时间仅由流的size决定，没有考虑到应用产生数据的速率。论文设计了RAX，通过获取应用产生数据的速率以及size计算更加准确的剩余完成时间。
@@ -60,3 +59,7 @@ for the network.
 - Simulations. 
 
 ### My thinking
+
+### 参考文献
+[Rate-Aware Flow Scheduling for Commodity Data Center Networks](https://ieeexplore.ieee.org/document/8057082/)
+

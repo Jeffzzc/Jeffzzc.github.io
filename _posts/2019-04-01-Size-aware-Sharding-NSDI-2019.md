@@ -10,7 +10,6 @@ tags:
     - Key-value Store
 ---
 
-## [Size-aware Sharding For Improving Tail Latencies in In-memory Key-value Stores](https://arxiv.org/pdf/1802.00696.pdf)
 
 ### 解决问题
 
@@ -50,3 +49,7 @@ tags:
 - 疑惑：实验中由于网卡只支持RSS, 所以To allow the clients and the server to send packets to specific RX queues, we ran a set of preliminary experiments to determine to which port to send a packet so that it is received by a specific RX queue。需要使用支持更加灵活定制的packet redirection NIC（论文举例是说可以用Flow Director）
 
 - ***Size-aware的思想很重要很广泛***：凡是scheduling类的工作都可以从这个角度考虑。cache类：比如 [AdaptSize: Orchestrating the Hot Object Memory Cache in a CDN (NSDI 2017)](https://www.cs.cmu.edu/~harchol/Papers/NSDI17.pdf)首次将object size考虑到cache admission机制中
+
+
+### 参考文献
+[Size-aware Sharding For Improving Tail Latencies in In-memory Key-value Stores](https://arxiv.org/pdf/1802.00696.pdf)

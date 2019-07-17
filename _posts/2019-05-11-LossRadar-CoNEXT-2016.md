@@ -10,7 +10,6 @@ tags:
     - Network Troubleshooting
 ---
 
-## [LossRadar: Fast Detection of Lost Packets in Data Center Networks](http://minlanyu.seas.harvard.edu/writeup/conext16.pdf)
 ### 核心思想 
 
 专门用于快速检测丢包以及获取丢包详细信息的monitor system. 可以说是第一篇**专门**做数据中心丢包troubleshooting的文章，[007](https://www.usenix.org/system/files/conference/nsdi18/nsdi18-arzani.pdf)在此文章之后.
@@ -132,4 +131,6 @@ Open vSwitch 和 P4 behavioral model 实现. Each meter reports the digests ever
 
    （2）Correlating lost packets with ACLs；
 
+### 参考文献
+[LossRadar: Fast Detection of Lost Packets in Data Center Networks](http://minlanyu.seas.harvard.edu/writeup/conext16.pdf)
 
