@@ -62,7 +62,7 @@ kramdown:
 
 # Gitalk
 gitalk:
-  enable: true    #是否开启Gitalk评论
+  enable: false    #是否开启Gitalk评论
   clientID: bd3305eb99c30eedf2c7                            #生成的clientID
   clientSecret: b468c3bfd3781c7352c718705c35f921f017db79    #生成的clientSecret
   repo: Yi-ran.github.io    #仓库名称
