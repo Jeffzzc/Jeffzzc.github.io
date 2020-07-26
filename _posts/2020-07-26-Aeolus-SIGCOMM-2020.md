@@ -19,7 +19,7 @@ Aeolus针对近年较热的主动拥塞控制协议一个普遍没有解决好�
 
 ### Motivation
 
-<img width="450" height="350" src="/img/post-aeolus-1.png"/>
+<img width="550" height="450" src="/img/post-aeolus-1.png"/>
 
 
 
