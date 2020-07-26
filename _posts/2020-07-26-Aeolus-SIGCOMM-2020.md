@@ -14,7 +14,7 @@ tags:
 
 
 
-Aeolus针对近年较热的主动拥塞控制协议一个普遍没有解决好的问题：第一个RTT内scheduled的数据包直接发送造成丢包, 延时不可控
+Aeolus针对近年较热的主动拥塞控制协议一个普遍没有解决好的问题：第一个RTT内unscheduled的数据包直接发送造成丢包, 延时不可控
 
 
 ### Motivation
