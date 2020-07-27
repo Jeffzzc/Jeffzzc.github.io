@@ -25,7 +25,7 @@ Aeolus针对近年数据中心较热的主动拥塞控制协议一个普遍没�
 
 - 第一个RTT传输很重要：随着带宽增长，越来越多的流能够在一个RTT内发送完毕；流可以从直接发送（不等待一个RTT后credit的分配结果）获益；空余带宽更多
 
-<img width="550" height="450" src="/img/post-aeolus-1.png"/>
+<img width="500" height="400" src="/img/post-aeolus-1.png"/>
 
 - 主动拥塞控制在第一个RRT内的问题
 
@@ -35,12 +35,12 @@ Aeolus针对近年数据中心较热的主动拥塞控制协议一个普遍没�
 2. 如果第一个RTT所有流都线速发：```scheduled的数据包受到unscheduled数据包的干扰```，尾延时增大。实验发现，
 tails are due to buffer buildups and subsequent packet drops caused by senders bursting too many unscheduled packets in the first RTT.
 
-<img width="550" height="450" src="/img/post-aeolus-3.png"/>
+<img width="500" height="400" src="/img/post-aeolus-3.png"/>
 
 
 ### Design
 
-<img width="550" height="450" src="/img/post-aeolus-2.png"/>
+<img width="500" height="400" src="/img/post-aeolus-2.png"/>
   
 
 ### Thoughts
