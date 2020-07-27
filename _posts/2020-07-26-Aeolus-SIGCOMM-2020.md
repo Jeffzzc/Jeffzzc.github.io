@@ -40,6 +40,8 @@ tails are due to buffer buildups and subsequent packet drops caused by senders b
 
 ### Design
 
+Aeolus的设计目标：希望unscheduled的数据包只充分利用网络剩余带宽而不干扰scheduled数据包，保证主动拥塞控制的带宽分配正常，同时具有良好的可部署性。
+
 <img width="500" height="400" src="/img/post-aeolus-2.png"/>
   
 
