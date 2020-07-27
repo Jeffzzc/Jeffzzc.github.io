@@ -32,7 +32,7 @@ Aeolus针对近年数据中心较热的主动拥塞控制协议一个普遍没�
 两个极端：
 
 1. 如果第一个RTT所有流都先等待credit：带宽浪费，短流带来额外开销大
-2. 如果第一个RTT所有流都线速发：```scheduled的数据包受到unscheduled数据包的干扰```，尾延时增大。实验发现，
+2. 如果第一个RTT所有流都线速发：充分利用带宽，但是无节制：```scheduled的数据包会受到unscheduled数据包的干扰```，尾延时增大。实验发现，
 tails are due to buffer buildups and subsequent packet drops caused by senders bursting too many unscheduled packets in the first RTT.
 
 <img width="500" height="400" src="/img/post-aeolus-3.png"/>
@@ -40,7 +40,7 @@ tails are due to buffer buildups and subsequent packet drops caused by senders b
 
 ### Design
 
-Aeolus的设计目标：希望unscheduled的数据包只充分利用网络剩余带宽而不干扰scheduled数据包，保证主动拥塞控制的带宽分配正常，同时具有良好的可部署性。
+***Aeolus的设计目标***：希望unscheduled的数据包只充分利用网络剩余带宽而不干扰scheduled数据包，保证主动拥塞控制的带宽分配正常，同时具有良好的可部署性。
 
 <img width="500" height="400" src="/img/post-aeolus-2.png"/>
   
