@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      ADS SIGCOMM CCR 2019
-subtitle:   Datacenter Congestion Control, Identifying what is essential and making it practical
+subtitle:   Datacenter Congestion Control Identifying what is essential and making it practical
 date:       2020-7-29
 author:     Yiran
 header-img: img/post-bg-field2.jpg
