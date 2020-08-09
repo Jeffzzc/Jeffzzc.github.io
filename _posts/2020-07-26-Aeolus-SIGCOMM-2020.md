@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Aeolus SIGCOMM 2020
-subtitle:   Aeolus A Building Block for Proactive Transport in Datacenters
+subtitle:   A Building Block for Proactive Transport in Datacenters
 date:       2020-7-26
 author:     Yiran
 header-img: img/post-bg-field1.jpg
