@@ -11,7 +11,7 @@ github_repo: "https://github.com/Yi-ran/Yi-ran.github.io.git" # you code reposit
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
+sidebar-about-description: "万物生长 各自高贵"
 sidebar-avatar: /img/home-yiran2.jpeg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
