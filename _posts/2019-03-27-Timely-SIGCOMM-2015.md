@@ -36,7 +36,7 @@ Datacenter RTTs are difficult to measure at microsecond granularity. This level 
 
 - **Pacing Engine**: The scheduler uses the segment size, flow rate (provided by the rate computation engine), and time of last transmission to compute the send time for the current segment with the appropriate pacing delay
 
-- **Rate Computation**: **采用的是RTT变化的梯度，设置一个high和一个low阈值，借鉴了RED！！！！！**
+- **Rate Computation**: **采用的是RTT变化的梯度，设置一个high和一个low阈值**
    
    <img width="500" height="350" src="/img/post-timely-2.jpg"/>
 
