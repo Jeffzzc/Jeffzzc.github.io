@@ -7,7 +7,7 @@ author:     Yiran
 header-img: img/post-bg-rwd.jpg
 catalog: true
 tags:
-    - In-band Network Telemetry
+    - Measurement in Datacenter
     - Programmable Switches
 ---
 
