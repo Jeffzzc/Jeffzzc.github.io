@@ -26,6 +26,18 @@ tags:
 
 ### Motivation
 
+作者采用实际流量观察 + 仿真验证的方式说明问题。
+
+WAN的RTT长（ms）DC的RTT短 （us）二者不同control loop交互带来性能问题：
+
+<img width="400" height="800" src="/img/post-annulus-motivation.png"/>
+
+根本原因：long feedback delay of WAN congestion control and the small buffer space in datacenter switches
+
+导致后果：
+1) datacenter traffic reacts much faster, taking the full burden of slowing down to drain the queues while facing long queues caused by the slow reacting WAN traffic.
+        
+2) feedback for the WAN traffic lags behind changes in capacity, making it difficult for the WAN congestion control to track available bandwidth accurately
 
 ### Design
 
