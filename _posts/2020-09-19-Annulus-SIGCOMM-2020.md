@@ -45,12 +45,13 @@ WAN的RTT长（ms）DC的RTT短 （us）二者不同control loop交互带来性�
 
 <img width="500" height="450" src="/img/post-annulus-1.png"/>
 
-
+速率取两个control loop算出的最小速率
 
 
 ### Implementation and Evaluation
 
 
+<img width="400" height="450" src="/img/post-annulus-architec.png"/>
 
   
 
