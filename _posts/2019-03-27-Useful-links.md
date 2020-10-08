@@ -9,6 +9,20 @@ catalog: true
 tags:
     - Useful links
 ---
+
+Research and Paper Writing:
+- [How to Read](http://www.cs.princeton.edu/courses/archive/fall13/cos597E/papers/howtoread.pdf)
+- [How to Increase the Chances Your Paper is Accepted at ACM SIGCOMM](http://www.sigcomm.org/for-authors/hints-tips-and-guides/author-guide)
+- [Common Bugs in Writing](http://www.cs.columbia.edu/~hgs/etc/writing-bugs.html)
+- [THE PH.D. GRIND](https://lijunsun.github.io/files/pguo-PhD-grind.pdf)
+- [Writing Science-How to Write Papers That Get Cited and Proposals That Get Funded](http://dust.ess.uci.edu/ppr/ppr_Sch12.pdf)
+- [Networking Research, Education, Mentoring and Service: Ten Insights](https://infocom2018.ieee-infocom.org/sites/infocom2018.ieee-infocom.org/files/KeynoteSlides_infocom_2018_final.pdf)
+- [Writing Perfect Papers (Baochun Li)](https://isn.xidian.edu.cn/_mediafile/isn/2017/06/05/1y0knnhzhc.pdf)
+
+
+
+
+Tools:
 - [Markdown](https://www.jianshu.com/p/191d1e21f7ed)
 - [Mathjax](http://docs.mathjax.org/en/latest/tex.html)
 - [Linux net命令](https://linux.cn/article-5461-1.html)
@@ -20,4 +34,4 @@ tags:
 - [OpenNFP](https://github.com/open-nfpsw)
 - [Mac minicom](https://blog.csdn.net/u010285246/article/details/72354038)
 - [Datacenter as a computer](http://www.cs.yale.edu/homes/yu-minlan/teach/csci599-fall12/papers/dccomputer.pdf)
-- [How to Read](http://www.cs.princeton.edu/courses/archive/fall13/cos597E/papers/howtoread.pdf)
+
