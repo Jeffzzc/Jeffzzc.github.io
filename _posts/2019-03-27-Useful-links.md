@@ -11,6 +11,7 @@ tags:
 ---
 
 Research and Paper Writing:
+- [How to Do Great Research (Grad school survival advice from Nick Feamster and Alex Gray)](https://greatresearch.org/)
 - [How to Read](http://www.cs.princeton.edu/courses/archive/fall13/cos597E/papers/howtoread.pdf)
 - [How to Increase the Chances Your Paper is Accepted at ACM SIGCOMM](http://www.sigcomm.org/for-authors/hints-tips-and-guides/author-guide)
 - [Common Bugs in Writing](http://www.cs.columbia.edu/~hgs/etc/writing-bugs.html)
@@ -23,6 +24,7 @@ Research and Paper Writing:
 
 
 Tools:
+- [TexPad](https://www.texpad.com/)
 - [Markdown](https://www.jianshu.com/p/191d1e21f7ed)
 - [Mathjax](http://docs.mathjax.org/en/latest/tex.html)
 - [Linux net命令](https://linux.cn/article-5461-1.html)
