@@ -14,6 +14,7 @@ Research and Paper Writing:
 - [How to Do Great Research (Grad school survival advice from Nick Feamster and Alex Gray)](https://greatresearch.org/)
 - [How to Read](http://www.cs.princeton.edu/courses/archive/fall13/cos597E/papers/howtoread.pdf)
 - [How to Increase the Chances Your Paper is Accepted at ACM SIGCOMM](http://www.sigcomm.org/for-authors/hints-tips-and-guides/author-guide)
+- [Writing Technical Articles](http://www.cs.columbia.edu/~hgs/etc/writing-style.html)
 - [Common Bugs in Writing](http://www.cs.columbia.edu/~hgs/etc/writing-bugs.html)
 - [THE PH.D. GRIND](https://lijunsun.github.io/files/pguo-PhD-grind.pdf)
 - [Writing Science-How to Write Papers That Get Cited and Proposals That Get Funded](http://dust.ess.uci.edu/ppr/ppr_Sch12.pdf)
