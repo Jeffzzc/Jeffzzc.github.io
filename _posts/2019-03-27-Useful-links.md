@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Useful links
-subtitle:   Research and Paper Writing, Tools
+subtitle:   Research and Paper Writing, Miscellaneous
 date:       2019-03-27
 author:     Yiran
 header-img: img/post-bg-ios9-web.jpg
@@ -24,7 +24,8 @@ Research and Paper Writing:
 
 
 
-Tools:
+Miscellaneous:
+- [CSRanking](http://csrankings.org)
 - [TexPad](https://www.texpad.com/)
 - [Markdown](https://www.jianshu.com/p/191d1e21f7ed)
 - [Mathjax](http://docs.mathjax.org/en/latest/tex.html)
