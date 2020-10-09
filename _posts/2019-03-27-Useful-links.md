@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      **Useful links**
+title:      Useful links
 subtitle:   Research and Paper Writing, Miscellaneous
 date:       2019-03-27
 author:     Yiran
