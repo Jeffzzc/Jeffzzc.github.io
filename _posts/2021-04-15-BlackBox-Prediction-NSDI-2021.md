@@ -15,9 +15,8 @@ Does ML make prediction simpler (i.e., allowing us to treat systems as blackboxe
 
 ### Core idea
 
-实验探究机器学习对黑盒系统性能预测的作用.
+实验探究机器学习对黑盒系统性能预测 (treat the application as a black-box and remain agnostic to the prediction’s use-case) 的作用.
 
-黑盒系统性能预测: treat the application as a black-box and remain agnostic to the prediction’s use-case.
 
 ### Methodology
 
@@ -53,9 +52,9 @@ $$
 ### Probabilistic Predictions
 
 
-### Summary: Implications and Takeways
+### Implications and Takeways
 
-- **Irreducible errors may be attributed to two common ***design techniques**: 1) the use of randomization (e.g., in load-balancing, scheduling) ; 2) the use of system optimizations in which a new mode of behavior is triggered by a threshold parameter (e.g., a promotion estimate, timeouts, a threshold on available workers).
+- **Irreducible errors may be attributed to two common design techniques**: 1) the use of randomization (e.g., in load-balancing, scheduling) ; 2) the use of system optimizations in which a new mode of behavior is triggered by a threshold parameter (e.g., a promotion estimate, timeouts, a threshold on available workers).
 
 - **Application modifications to eliminate sources of irreducible errors do produce a notable increase in prediction accuracy.** However, in more realistic BBC scenarios, prediction errors do remain high for certain applications due to the underlying trend being difficult to learn.
 
