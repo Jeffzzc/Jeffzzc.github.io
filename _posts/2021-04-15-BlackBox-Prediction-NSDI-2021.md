@@ -47,7 +47,7 @@ $$
   f_{oracle}(X) = (\sum_{i=1}^n\frac{\delta(X_{i},X)}{Y_{i}}) / (\sum_{i=1}^n\frac{\delta(X_{i},X)}{{Y_{i}}^2})
   $$
   $$
-  \delta(a,b) = 1  \quad \quad if a= b,and 0 otherwise 
+  \delta(a,b) = 1  \quad \quad if \quad a= b,\quad and \quad 0 \quad otherwise 
   $$
 
   O-err captures the irreducible error inherent to an application (i.e., no ML model could achieve an error rate lower than the O-err) while the BoM-err captures the lowest error rate achieved by some ML model.
