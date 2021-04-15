@@ -44,7 +44,7 @@ $$
 
   **The Oracle predictor: O-err**
   $$
-  f_{oracle}(X) = (\sum_{i=1}^n\frac{\delta(X_{i},X)}{Y_{i}}) / (\sum_{i=1}^n\frac{\delta(X_{i},X)}{{Y_{i}}^2})
+  f_{oracle}(X) = (\sum_{i=1}^n\frac{\delta(X_{i},X)}{Y_{i}}) / (\sum_{i=1}^n\frac{\delta(X_{i},X)}{Y_{i}^2})
   $$
   $$
   \delta(a,b) = 1  \quad \quad if \quad a= b,\quad and \quad 0 \quad otherwise 
