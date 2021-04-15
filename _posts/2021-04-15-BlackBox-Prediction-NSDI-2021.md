@@ -35,14 +35,20 @@ $$
 
   **The Beyond Best-Case (BBC) Test**: relax each of the constraints/assumptions imposed in the BC test to study prediction accuracy under more realistic scenarios.
 
-  Application profiling and model training. Six ML algorithms are selected: k-nearest neighbors, random forest regression, linear regression, linear support vector machine (SVM) regression, kernelized SVM regression, and neural networks.
+  **Application profiling and model training**. In the profiling stage, an application is run under different configurations to generate raw dataseet. In the training stage, the dataset first undergoes pre-processing (featurization, normalization, and outlier removal), and is then randomly split into two disjoint datasets: the training set and the test set. Six ML algorithms are selected: k-nearest neighbors, random forest regression, linear regression, linear support vector machine (SVM) regression, kernelized SVM regression, and neural networks.
 
 
 - Predictors
 
-  The Best-of-Models (BoM) predictor: best-of-models error (BoM-err) as the minimum rMSRE across all the models we consider. 
+  **The Best-of-Models (BoM) predictor**: best-of-models error (**BoM-err**) as the minimum rMSRE across all the models we consider. 
 
-  The Oracle predictor: O-err
+  **The Oracle predictor: O-err**
+  $$
+  f_{oracle}(X) = (\sum_{i=1}^n\frac{\delta(X_{i},X)}{Y_{i}}) / (\sum_{i=1}^n\frac{\delta(X_{i},X)}{{Y_{i}}^2s})
+  $$
+  $$
+  \delta(a,b) = 1  \quad \quad if a= b,and 0 otherwise 
+  $$
 
   O-err captures the irreducible error inherent to an application (i.e., no ML model could achieve an error rate lower than the O-err) while the BoM-err captures the lowest error rate achieved by some ML model.
 
