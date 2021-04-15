@@ -9,7 +9,6 @@ catalog: true
 tags:
     - Machine Learning
 ---
-(未完待续)
 
 Does ML make prediction simpler (i.e., allowing us to treat systems as blackboxes) and ***general*** (i.e., across a range of applications and use-cases)? The answer is NO.
 
