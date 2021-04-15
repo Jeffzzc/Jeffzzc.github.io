@@ -23,19 +23,31 @@ Does ML make prediction simpler (i.e., allowing us to treat systems as blackboxe
 - Metrics
 
 $$
-  rMSRE = 
+  rMSRE = \sqrt{\frac{1}{n}\sum_{i=1}^n(\frac{Y_{i}-f(X_{i})}{Y_{i}})^2}
 $$
 
-- Parameters
+- Parameters: Application-level input, Application-level configuration, Infrastructure
 
-<img width="900" height="750" src="/img/post-blackbox-1.png"/>
+
+- Tests
+
+  **The Best-Case (BC) Test**: making very strong assumptions on both the systems and ML front, including one-feature-at-a-time assumption, seen configuration assumption, no-contention requirement and identical-inputs assumption.
+
+  **The Beyond Best-Case (BBC) Test**: relax each of the constraints/assumptions imposed in the BC test to study prediction accuracy under more realistic scenarios.
+
+  Application profiling and model training. Six ML algorithms are selected: k-nearest neighbors, random forest regression, linear regression, linear support vector machine (SVM) regression, kernelized SVM regression, and neural networks.
 
 
 - Predictors
 
-- Tests
+  The Best-of-Models (BoM) predictor: best-of-models error (BoM-err) as the minimum rMSRE across all the models we consider. 
+
+  The Oracle predictor: O-err
+
+  O-err captures the irreducible error inherent to an application (i.e., no ML model could achieve an error rate lower than the O-err) while the BoM-err captures the lowest error rate achieved by some ML model.
 
 
+<img width="900" height="750" src="/img/post-blackbox-1.png"/>
 
 
 ### Results: Existing Applications 
