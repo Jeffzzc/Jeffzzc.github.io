@@ -42,6 +42,7 @@ $$
   **The Best-of-Models (BoM) predictor**: best-of-models error (**BoM-err**) as the minimum rMSRE across all the models we consider. 
 
   **The Oracle predictor: O-err**
+  
   $$
   f_{oracle}(X) = (\sum_{i=1}^n\frac{\delta(X_{i},X)}{Y_{i}}) / (\sum_{i=1}^n\frac{\delta(X_{i},X)}{Y_{i}^2})
   $$
