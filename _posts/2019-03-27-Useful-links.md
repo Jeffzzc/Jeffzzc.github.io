@@ -33,10 +33,10 @@ Miscellaneous:
 - [运行内核选择拥塞控制算法](http://bbs.chinaunix.net/thread-4057569-1-1.html)
 - [Linux ixgbe设置](https://blog.csdn.net/vah101/article/details/40077937)
 - [Linux TCP/IP参数调优](https://tonydeng.github.io/2015/05/25/linux-tcpip-tuning/)
-# - [CentOS 内核源码安装](https://www.isthnew.com/archives/centos7-bbr.html)
-# - [Scapy-HTTP](https://github.com/invernizzi/scapy-http)
+- [CentOS 内核源码安装](https://www.isthnew.com/archives/centos7-bbr.html)
+- [Scapy-HTTP](https://github.com/invernizzi/scapy-http)
 - [OpenNFP](https://github.com/open-nfpsw)
 - [Mac minicom](https://blog.csdn.net/u010285246/article/details/72354038)
-# - [Datacenter as a computer](http://www.cs.yale.edu/homes/yu-minlan/teach/csci599-fall12/papers/dccomputer.pdf)
+- [Datacenter as a computer](http://www.cs.yale.edu/homes/yu-minlan/teach/csci599-fall12/papers/dccomputer.pdf)
 - [The Ultimate Guide to Internet Congestion Control](https://www.compiralabs.com/ultimate-guide-congestion-control?s=09)
 
