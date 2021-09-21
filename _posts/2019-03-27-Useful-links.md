@@ -11,6 +11,7 @@ tags:
 ---
 
 Research and Paper Writing:
+- [How to Look for Ideas in Computer Science Research](https://medium.com/digital-diplomacy/how-to-look-for-ideas-in-computer-science-research-7a3fa6f4696f)
 - [How to Do Great Research (Grad school survival advice from Nick Feamster and Alex Gray)](https://greatresearch.org/)
 - [How to Read](http://www.cs.princeton.edu/courses/archive/fall13/cos597E/papers/howtoread.pdf)
 - [Writing Technical Articles](http://www.cs.columbia.edu/~hgs/etc/writing-style.html)
