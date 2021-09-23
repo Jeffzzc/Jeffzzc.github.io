@@ -10,14 +10,14 @@ tags:
     - Useful links
 ---
 
-Research and Paper Writing:
+### Research and Paper Writing
 - [How to Look for Ideas in Computer Science Research](https://medium.com/digital-diplomacy/how-to-look-for-ideas-in-computer-science-research-7a3fa6f4696f)
 - [How to Do Great Research (Grad school survival advice from Nick Feamster and Alex Gray)](https://greatresearch.org/)
 - [How to Read](http://www.cs.princeton.edu/courses/archive/fall13/cos597E/papers/howtoread.pdf)
 - [Writing Technical Articles](http://www.cs.columbia.edu/~hgs/etc/writing-style.html)
 - [Common Bugs in Writing](http://www.cs.columbia.edu/~hgs/etc/writing-bugs.html)
-- [THE PH.D. GRIND](https://lijunsun.github.io/files/pguo-PhD-grind.pdf)
-- [Writing Science-How to Write Papers That Get Cited and Proposals That Get Funded](http://dust.ess.uci.edu/ppr/ppr_Sch12.pdf)
+- [THE PH.D. GRIND](https://www.scholat.com/teamwork/teamworkdownloadscholar.html?id=4924&teamId=1158)
+- [Writing Science-How to Write Papers That Get Cited and Proposals That Get Funded](https://pdfroom.com/books/writing-science-how-to-write-papers-that-get-cited-and-proposals-that-get-funded/jb5qO9VBgxQ)
 - [Networking Research, Education, Mentoring and Service: Ten Insights](https://infocom2018.ieee-infocom.org/sites/infocom2018.ieee-infocom.org/files/KeynoteSlides_infocom_2018_final.pdf)
 - [How to Increase the Chances Your Paper is Accepted at ACM SIGCOMM](http://www.sigcomm.org/for-authors/hints-tips-and-guides/author-guide)
 - [Writing Perfect Papers (Baochun Li)](https://isn.xidian.edu.cn/_mediafile/isn/2017/06/05/1y0knnhzhc.pdf)
@@ -25,7 +25,7 @@ Research and Paper Writing:
 
 
 
-Miscellaneous:
+### Miscellaneous
 - [CSRanking](http://csrankings.org)
 - [TexPad](https://www.texpad.com/)
 - [Markdown](https://www.jianshu.com/p/191d1e21f7ed)
