@@ -13,13 +13,19 @@ tags:
 ### Background
 
 - Task-based distributed systems
+  
+  asynchronous and dynamic computation
+
 
 - Collective Communications
+
 
 ### Motivation
 
 
 ### Design
+
+- Receiver-Driven Collective Communication
 
 
 
