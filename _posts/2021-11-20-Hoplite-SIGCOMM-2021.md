@@ -14,7 +14,7 @@ tags:
 
 - Task-based distributed systems
   
-  asynchronous and dynamic computation
+  asynchronous and dynamic computation:
 
   <img width="450" height="800" src="/img/post-hoplite-1.png"/>
 
