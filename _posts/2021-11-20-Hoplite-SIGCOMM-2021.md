@@ -29,7 +29,7 @@ tags:
 
 - Receiver-Driven Collective Communication
 
-  <img width="850" height="550" src="/img/post-hoplite-2.png"/>
+  <img width="950" height="650" src="/img/post-hoplite-2.png"/>
 
 
 ### Implementation
