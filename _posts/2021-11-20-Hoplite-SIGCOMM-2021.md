@@ -16,6 +16,8 @@ tags:
   
   asynchronous and dynamic computation
 
+  <img width="350" height="500" src="/img/post-hoplite-1.png"/>
+
 
 - Collective Communications
 
