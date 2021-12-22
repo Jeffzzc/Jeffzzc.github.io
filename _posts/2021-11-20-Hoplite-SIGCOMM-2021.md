@@ -50,22 +50,21 @@ tags:
 
 核心设计两点：
 
-(1) decentralized fault-tolerant coordination of data transfer for reduce and broadcast 
+- decentralized fault-tolerant coordination of data transfer for reduce and broadcast 
+- pipelining of object transfers both across nodes and between tasks and the object store.
 
-(2) pipelining of object transfers both across nodes and between tasks and the object store.
+1. Hoplite Workflow
 
-- Hoplite Workflow
+2. Object Directory Service
 
-- Object Directory Service
+3. Pipelining
 
-- Pipelining
-
-- Receiver-Driven Collective Communication
+4. Receiver-Driven Collective Communication
 
   <img width="950" height="650" src="/img/post-hoplite-2.png"/>
 
 
-- Fault-Tolerant Collective Communication
+5. Fault-Tolerant Collective Communication
 
 
 ### Implementation
