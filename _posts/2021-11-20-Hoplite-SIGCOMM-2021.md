@@ -53,18 +53,17 @@ tags:
 - decentralized fault-tolerant coordination of data transfer for reduce and broadcast 
 - pipelining of object transfers both across nodes and between tasks and the object store.
 
-1. Hoplite Workflow
+**Hoplite Workflow**
 
-2. Object Directory Service
+**Object Directory Service**
 
-3. Pipelining
+**Pipelining**
 
-4. Receiver-Driven Collective Communication
+**Receiver-Driven Collective Communication**
 
   <img width="950" height="650" src="/img/post-hoplite-2.png"/>
 
-
-5. Fault-Tolerant Collective Communication
+**fault-Tolerant Collective Communication**
 
 
 ### Implementation
