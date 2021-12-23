@@ -10,7 +10,7 @@ tags:
     - Distributed Sytems
 ---
 
-(未完待续)
+第一个为基于任务的分布式系统提供有效的 Collective Communication 支持的工作。
 
 ### Background
 
@@ -23,7 +23,7 @@ tags:
 
 - Collective Communications
 
-  Collective communication: e.g., **broadcast, reduce**
+  e.g., **broadcast, reduce**
 
   现有的collective communication library: OpenMPI, MPICH, Horovod, Gloo, and NCCL. 
 
@@ -69,8 +69,8 @@ tags:
 
 ```Reduce更复杂： ```Broadcast is simpler because a receiver can fetch the object from any sender, and Hoplite thus has more flexibility to adapting data transfer schedule. For reduce, we need to make sure all the objects are reduced once and only once: when one object is added into a partial reduce result, the object should not be added into any other partial results.
 
-$n$ objects. Without the support of collective communication in task-based distributed systems, each node sends the object to a
-single receiver. network latency is $L$ , network bandwidth is $B$, and the object size is $S$. Total reduce time : $L+ \frac{nS}{B}$ . 为了缓解receiver作为唯一root的带宽瓶颈，$d-nary$ tree, the total running time is $L+log_{d}n+ \frac{nS}{B}$. It reduces the latency due to the bandwidth constraint but incurs additional latency because the height of the tree grows to $log_{d}n$. The optimal choice of $d$ depends on the network characteristics, the size of the object, and the number of participants.
+Assume $n$ objects. Without the support of collective communication in task-based distributed systems, each node sends the object to a
+single receiver. network latency is $L$ , network bandwidth is $B$, and the object size is $S$. Total reduce time : $L+ \frac{nS}{B}$ . 为了缓解receiver作为唯一root的带宽瓶颈，考虑$d-nary$ tree, the total running time is $L+log_{d}n+ \frac{nS}{B}$. It reduces the latency due to the bandwidth constraint but incurs additional latency because the height of the tree grows to $log_{d}n$. The **optimal choice of $d$** depends on the network characteristics, the size of the object, and the number of participants.
 
   <img width="950" height="650" src="/img/post-hoplite-2.png"/>
 
