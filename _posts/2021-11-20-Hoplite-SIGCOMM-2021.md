@@ -57,18 +57,32 @@ tags:
 
 **Object Directory Service**
 
+个人认为这个 object store 的引入是实现 runtime schedule 的关键
+
 **Pipelining**
 
+对 object store 读取数据的优化：Hoplite uses pipelining to achieve low-latency transfer between processes and across nodes for large objects. This is implemented by enabling a receiver node to fetch an object that is incomplete in a source node.
+
 **Receiver-Driven Collective Communication**
+
+```Broadcast的优化：```If all receivers simply fetch the object from the sender, the performance will be restricted by the sender’s upstream bandwidth. Traditional collective communication libraries can generate a **static tree** where the root is the sender node to mitigate the throughput bottleneck. Hoplite’s receiver-driven coordination scheme is to achieve a similar effect but using decentralized protocols: use receivers who receives the object earlier than the rest as intermediates to construct a broadcast tree.
+
+```Reduce更复杂： ```Broadcast is simpler because a receiver can fetch the object from any sender, and Hoplite thus has more flexibility to adapting data transfer schedule. For reduce, we need to make sure all the objects are reduced once and only once: when one object is added into a partial reduce result, the object should not be added into any other partial results.
+
+$n$ objects. Without the support of collective communication in task-based distributed systems, each node sends the object to a
+single receiver. network latency is $L$ , network bandwidth is $B$, and the object size is $S$. Total reduce time : $L+ \frac{nS}{B}$ . 为了缓解receiver作为唯一root的带宽瓶颈，$d-nary$ tree, the total running time is $L+log_{d}n+ \frac{nS}{B}$. It reduces the latency due to the bandwidth constraint but incurs additional latency because the height of the tree grows to $log_{d}n$. The optimal choice of $d$ depends on the network characteristics, the size of the object, and the number of participants.
 
   <img width="950" height="650" src="/img/post-hoplite-2.png"/>
 
 **fault-Tolerant Collective Communication**
 
+也是分的broadcast和reduce讨论
 
 ### Implementation
 
+Python front end
 
+object directory service: gRPC
 
 ### Evaluation
 
@@ -76,6 +90,8 @@ tags:
 
 
 ### Thinking
+
+非常典型的系统设计文章。注意思考为什么引入各个design。
 
 
 ### 参考文献
