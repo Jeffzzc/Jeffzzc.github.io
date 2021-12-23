@@ -74,7 +74,7 @@ single receiver. network latency is $L$ , network bandwidth is $B$, and the obje
 
   <img width="950" height="650" src="/img/post-hoplite-2.png"/>
 
-**fault-Tolerant Collective Communication**
+**Fault-Tolerant Collective Communication**
 
 也是分的broadcast和reduce讨论
 
@@ -93,6 +93,8 @@ object directory service: gRPC
 
 非常典型的系统设计文章。注意思考为什么引入各个design。
 
+几个问题（参考[Public Review](https://dl.acm.org/action/downloadSupplement?doi=10.1145%2F3452296.3472897&file=73-public-review.pdf)）:
+the current design of Hoplite assumes that the network bandwidth between all the nodes is uniform, which may not hold in production environments where the available bandwidth across the network is dynamic and heterogeneous, so how to accommodate such heterogeneity? Furthermore, Hoplite does not support pipelining into GPU memory in its current design. So if training with GPU, the application has to copy data between GPU and CPU memories, then how to extend the fine-grained pipelining into GPU memory?
 
 ### 参考文献
 
