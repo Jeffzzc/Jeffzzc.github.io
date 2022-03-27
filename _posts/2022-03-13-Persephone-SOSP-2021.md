@@ -22,10 +22,10 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 
 
 
- <img width="950" height="650" src="/img/post-pers-1.png"/>
+<img width="950" height="650" src="/img/post-pers-1.png"/>
 
 
-<img width="650" height="650" src="/img/post-pers-2.png"/>
+<img width="450" height="450" src="/img/post-pers-2.png"/>
 
 
 
@@ -34,7 +34,7 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 
 
 
-<img width="800" height="650" src="/img/post-hoplite-3.png"/>
+<img width="650" height="450" src="/img/post-pers-3.png"/>
 
 
 
@@ -44,7 +44,7 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 
 ### Thinking
 
-<img width="950" height="650" src="/img/post-hoplite-4.png"/>
+<img width="950" height="650" src="/img/post-pers-4.png"/>
 
 
 
