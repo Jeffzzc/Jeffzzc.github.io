@@ -7,7 +7,8 @@ author:     Yiran
 header-img: img/post-bg-mountain4.jpg
 catalog: true
 tags:
-    - OS Scheduling, microsecond-scale
+    - OS Scheduling
+    - microsecond-scale
 ---
 
 （未完待续）
