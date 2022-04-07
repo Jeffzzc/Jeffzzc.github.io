@@ -35,7 +35,7 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 
 
 
-<img width="650" height="450" src="/img/post-pers-3.png"/>
+<img width="450" height="300" src="/img/post-pers-3.png"/>
 
 
 
