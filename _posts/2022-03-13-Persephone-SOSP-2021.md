@@ -21,8 +21,8 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 ### Background and Motivation
 
 
+ <img width="950" height="650" src="/img/post-pers-1.png"/>
 
-<img width="950" height="650" src="/img/post-pers-1.png"/>
 
 
 <img width="450" height="450" src="/img/post-pers-2.png"/>
