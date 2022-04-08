@@ -21,13 +21,10 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 #### $\bullet$ 现有CPU scheduling策略在heavy-tailed workload的下的不足
  
 这里说的CPU scheduling是指请求到达时，如何调度给每个核（负载均衡）
-
 问题：dispersion-based head-of-line blocking. 大请求阻塞了小请求（即使队列长度很短）
 
 **d-FCFS**:每个worker有local queue,分配平均的请求
-
 **c-FCFS**:一个queue负责接收所有请求，然后dispath给idle的worker
-
 **TS**:不同请求种类有不同的queue, 可preemption
 
 
@@ -55,7 +52,6 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 需要解决两个问题：
 
 (1) 预测每个请求的CPU需求: a request classifiers API for capturing request types. Profiling the workload and updating reservations. 
-
 (2) Partition CPU resources among types while retaining the ability to handle bursts of arrivals and minimizing CPU waste
 
 **注意其实涉及到了两个层面的策略：一方面是请求如何调度到已分配的核上；另一方面是如何给每种type分配合适的核数量**
