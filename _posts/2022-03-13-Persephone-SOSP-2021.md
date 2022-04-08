@@ -31,21 +31,21 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 	**TS**:不同请求种类有不同的queue, 可preemption
 
 
-<img width="950" height="650" src="/img/post-pers-1.png"/>
+	<img width="950" height="650" src="/img/post-pers-1.png"/>
 
 
-Shinjuku’s TS policy fares better than c-FCFS and d-FCFS, being both work conserving and able to preempt long requests: it maintains slowdown below 10 up to 3.7 Mrps, 70% of the peak load. However, this simulation accounts for an optimistic 1$\mu$s preemption overhead and overlooks the practicality of supporting preemption at the microsecond scale.
+	*Shinjuku’s TS policy fares better than c-FCFS and d-FCFS, being both work conserving and able to preempt long requests: it maintains slowdown below 10 up to 3.7 Mrps, 70% of the peak load. However, this simulation accounts for an optimistic 1$\mu$s preemption overhead and overlooks the practicality of supporting preemption at the microsecond scale.*
 
 
-- **Insight**: Leaving certain cores idle for readily handling potential future (bursts of) short requests is highly beneficial at microsecond scale.
+- **Insight**: **Leaving certain cores idle for readily handling potential future (bursts of) short requests is highly beneficial at microsecond scale**
 
 	本质上，work preemption是较优的，但是在微秒级下interrupt的开销太大，所以Perséphone思想是通过利用请求的大小特征，不采用preemption的方式，实现近似最优的效果。
 
-	Instead, given an understanding of each request’s potential processing time, an application aware, not work conserving policy can reduce slowdown for short requests by estimating their CPU demand and dedicating workers to them. These workers will be ```idle``` in the absence of short requests, but when they do, they are guaranteed to not be blocked behind long requests.
+	*Instead, given an understanding of each request’s potential processing time, an application aware, not work conserving policy can reduce slowdown for short requests by estimating their CPU demand and dedicating workers to them. These workers will be ```idle``` in the absence of short requests, but when they do, they are guaranteed to not be blocked behind long requests.*
 	
 
 
-总结：
+- 总结：
 
 <img width="450" height="450" src="/img/post-pers-2.png"/>
 
@@ -69,7 +69,7 @@ Shinjuku’s TS policy fares better than c-FCFS and d-FCFS, being both work cons
 - DARC reservation mechanism
 
 	根据请求种类的average CPU demand 分配 worker.
-	 
+
 	计算Average CPU demand(runtime更新)：using the workload’s composition, normalizing the contribution of each request type’s average service time to the entire workload’s average service time. The contribution of a given request type is its average service time multiplied by its **occurrence ratio** as a percentage of the entire workload.
 
 <img width="450" height="250" src="/img/post-pers-5.png"/>
