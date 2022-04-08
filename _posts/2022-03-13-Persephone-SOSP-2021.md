@@ -18,7 +18,7 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 
 ### Background and Motivation
 
-##### $\bullet$ 现有CPU scheduling策略在heavy-tailed workload的下的不足
+##### $\bullet$ 现有CPU scheduling策略在heavy-tailed workload下的不足
  
 这里说的CPU scheduling是指请求到达时，如何调度给每个核（负载均衡） 
 
@@ -55,7 +55,7 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 需要解决两个问题：
 
 (1) 预测每个请求的CPU需求: a request classifiers API for capturing request types. Profiling the workload and updating reservations.  
- 
+
 (2) Partition CPU resources among types while retaining the ability to handle bursts of arrivals and minimizing CPU waste
 
 **注意其实涉及到了两个层面的策略：一方面是请求如何调度到已分配的核上；另一方面是如何给每种type分配合适的核数量**
