@@ -70,7 +70,7 @@ A single queue abstraction to application workers: it iterates over **typed queu
 <img width="450" height="250" src="/img/post-pers-5.png"/>
 
 
-##### 系统架构
+##### $\bullet$ 系统架构
 <img width="450" height="300" src="/img/post-pers-3.png"/>
 
 
