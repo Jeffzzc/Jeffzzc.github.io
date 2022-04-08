@@ -16,9 +16,9 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 核心思想是 Dynamic Application-aware Reserved Cores (DARC), 感知应用处理时间，为具有短处理时间的请求预留核。
 
 
-## Background and Motivation
+### Background and Motivation
 
-#### 现有CPU scheduling策略在heavy-tailed workload的下的不足
+#### $\bullet$ 现有CPU scheduling策略在heavy-tailed workload的下的不足
  
 这里说的CPU scheduling是指请求到达时，如何调度给每个核（负载均衡）
 
@@ -36,7 +36,7 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 >*Shinjuku’s TS policy fares better than c-FCFS and d-FCFS, being both work conserving and able to preempt long requests: it maintains slowdown below 10 up to 3.7 Mrps, 70% of the peak load. However, this simulation accounts for an optimistic 1$\mu$s preemption overhead and overlooks the practicality of supporting preemption at the microsecond scale.*
 
 
-#### Insight
+#### $\bullet$ Insight
 
 **Leaving certain cores idle for readily handling potential future (bursts of) short requests is highly beneficial at microsecond scale**
 
@@ -44,12 +44,12 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 >*Instead, given an understanding of each request’s potential processing time, an application aware, not work conserving policy can reduce slowdown for short requests by estimating their CPU demand and dedicating workers to them. These workers will be ```idle``` in the absence of short requests, but when they do, they are guaranteed to not be blocked behind long requests.*
 
 
-#### 总结：
+#### $\bullet$ 总结
 
 <img width="450" height="450" src="/img/post-pers-2.png"/>
 
 
-## Design
+### Design
 
 
 需要解决两个问题：
@@ -60,12 +60,12 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 
 **注意其实涉及到了两个层面的策略：一方面是请求如何调度到已分配的核上；另一方面是如何给每种type分配合适的核数量**
 
-#### Scheduling model
+#### $\bullet$ Scheduling model
 
 A single queue abstraction to application workers: it iterates over **typed queues** sorted by average service time and dequeues them in a first come, first served fashion. For each request type registered in the system, if there is a pending request in that type’s queue, DARC greedily searches the list of reserved workers for an idle worker. If none is found, DARC searches for a stealable worker
 
 
-#### DARC reservation mechanism
+#### $\bullet$ DARC reservation mechanism
 
 根据请求种类的average CPU demand 分配 worker.
 
@@ -87,7 +87,7 @@ A single queue abstraction to application workers: it iterates over **typed queu
 <img width="950" height="500" src="/img/post-pers-6.png"/>
 
 
-## Thinking
+### Thinking
 
 Perséphone借鉴了网络流调度中短流优先（SJF/SRPT）的思想
 
