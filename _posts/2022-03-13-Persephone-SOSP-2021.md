@@ -20,28 +20,28 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 
 - 现有CPU scheduling策略在heavy-tailed workload的下的不足
  
- 	这里说的CPU scheduling是指请求到达时，如何调度给每个核（负载均衡）
+这里说的CPU scheduling是指请求到达时，如何调度给每个核（负载均衡）
 
-	问题：dispersion-based head-of-line blocking. 大请求阻塞了小请求（即使队列长度很短）
+问题：dispersion-based head-of-line blocking. 大请求阻塞了小请求（即使队列长度很短）
 
-	**d-FCFS**:每个worker有local queue,分配平均的请求
+**d-FCFS**:每个worker有local queue,分配平均的请求
 
-	**c-FCFS**:一个queue负责接收所有请求，然后dispath给idle的worker
+**c-FCFS**:一个queue负责接收所有请求，然后dispath给idle的worker
 
-	**TS**:不同请求种类有不同的queue, 可preemption
+**TS**:不同请求种类有不同的queue, 可preemption
 
 
 <img width="950" height="650" src="/img/post-pers-1.png"/>
 
 
-	Shinjuku’s TS policy fares better than c-FCFS and d-FCFS, being both work conserving and able to preempt long requests: it maintains slowdown below 10 up to 3.7 Mrps, 70% of the peak load. However, this simulation accounts for an optimistic 1$\mu$s preemption overhead and overlooks the practicality of supporting preemption at the microsecond scale.
+Shinjuku’s TS policy fares better than c-FCFS and d-FCFS, being both work conserving and able to preempt long requests: it maintains slowdown below 10 up to 3.7 Mrps, 70% of the peak load. However, this simulation accounts for an optimistic 1$\mu$s preemption overhead and overlooks the practicality of supporting preemption at the microsecond scale.
 
 
 - **Insight**: Leaving certain cores idle for readily handling potential future (bursts of) short requests is highly beneficial at microsecond scale.
 
-	本质上，work preemption是较优的，但是在微秒级下interrupt的开销太大，所以Perséphone思想是通过利用请求的大小特征，不采用preemption的方式，实现近似最优的效果。
+本质上，work preemption是较优的，但是在微秒级下interrupt的开销太大，所以Perséphone思想是通过利用请求的大小特征，不采用preemption的方式，实现近似最优的效果。
 
-	Instead, given an understanding of each request’s potential processing time, an application aware, not work conserving policy can reduce slowdown for short requests by estimating their CPU demand and dedicating workers to them. These workers will be ```idle``` in the absence of short requests, but when they do, they are guaranteed to not be blocked behind long requests.
+Instead, given an understanding of each request’s potential processing time, an application aware, not work conserving policy can reduce slowdown for short requests by estimating their CPU demand and dedicating workers to them. These workers will be ```idle``` in the absence of short requests, but when they do, they are guaranteed to not be blocked behind long requests.
 	
 
 
