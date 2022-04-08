@@ -20,15 +20,15 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 
 - 现有CPU scheduling策略在heavy-tailed workload的下的不足
  
-这里说的CPU scheduling是指请求到达时，如何调度给每个核（负载均衡）
+	这里说的CPU scheduling是指请求到达时，如何调度给每个核（负载均衡）
 
-问题：dispersion-based head-of-line blocking. 大请求阻塞了小请求（即使队列长度很短）
+	问题：dispersion-based head-of-line blocking. 大请求阻塞了小请求（即使队列长度很短）
 
-**d-FCFS**:每个worker有local queue,分配平均的请求
+	**d-FCFS**:每个worker有local queue,分配平均的请求
 
-**c-FCFS**:一个queue负责接收所有请求，然后dispath给idle的worker
+	**c-FCFS**:一个queue负责接收所有请求，然后dispath给idle的worker
 
-**TS**:不同请求种类有不同的queue, 可preemption
+	**TS**:不同请求种类有不同的queue, 可preemption
 
 
 <img width="950" height="650" src="/img/post-pers-1.png"/>
@@ -39,9 +39,9 @@ Shinjuku’s TS policy fares better than c-FCFS and d-FCFS, being both work cons
 
 - **Insight**: Leaving certain cores idle for readily handling potential future (bursts of) short requests is highly beneficial at microsecond scale.
 
-本质上，work preemption是较优的，但是在微秒级下interrupt的开销太大，所以Perséphone思想是通过利用请求的大小特征，不采用preemption的方式，实现近似最优的效果。
+	本质上，work preemption是较优的，但是在微秒级下interrupt的开销太大，所以Perséphone思想是通过利用请求的大小特征，不采用preemption的方式，实现近似最优的效果。
 
-Instead, given an understanding of each request’s potential processing time, an application aware, not work conserving policy can reduce slowdown for short requests by estimating their CPU demand and dedicating workers to them. These workers will be ```idle``` in the absence of short requests, but when they do, they are guaranteed to not be blocked behind long requests.
+	Instead, given an understanding of each request’s potential processing time, an application aware, not work conserving policy can reduce slowdown for short requests by estimating their CPU demand and dedicating workers to them. These workers will be ```idle``` in the absence of short requests, but when they do, they are guaranteed to not be blocked behind long requests.
 	
 
 
@@ -63,13 +63,14 @@ Instead, given an understanding of each request’s potential processing time, a
 
 - Scheduling model
 
-A single queue abstraction to application workers: it iterates over **typed queues** sorted by average service time and dequeues them in a first come, first served fashion. For each request type registered in the system, if there is a pending request in that type’s queue, DARC greedily searches the list of reserved workers for an idle worker. If none is found, DARC searches for a stealable worker
+	A single queue abstraction to application workers: it iterates over **typed queues** sorted by average service time and dequeues them in a first come, first served fashion. For each request type registered in the system, if there is a pending request in that type’s queue, DARC greedily searches the list of reserved workers for an idle worker. If none is found, DARC searches for a stealable worker
 
 
 - DARC reservation mechanism
 
-根据请求种类的average CPU demand 分配 worker. 
-计算Average CPU demand(runtime更新)：using the workload’s composition, normalizing the contribution of each request type’s average service time to the entire workload’s average service time. The contribution of a given request type is its average service time multiplied by its **occurrence ratio** as a percentage of the entire workload.
+	根据请求种类的average CPU demand 分配 worker.
+	 
+	计算Average CPU demand(runtime更新)：using the workload’s composition, normalizing the contribution of each request type’s average service time to the entire workload’s average service time. The contribution of a given request type is its average service time multiplied by its **occurrence ratio** as a percentage of the entire workload.
 
 <img width="450" height="250" src="/img/post-pers-5.png"/>
 
