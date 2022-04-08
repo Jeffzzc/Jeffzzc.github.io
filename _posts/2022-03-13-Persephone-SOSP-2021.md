@@ -16,7 +16,7 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 核心思想是 Dynamic Application-aware Reserved Cores (DARC), 感知应用处理时间，为具有短处理时间的请求预留核。
 
 
-### Background and Motivation
+## Background and Motivation
 
 #### 现有CPU scheduling策略在heavy-tailed workload的下的不足
  
@@ -33,7 +33,6 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 
 <img width="950" height="650" src="/img/post-pers-1.png"/>
 
-
 >*Shinjuku’s TS policy fares better than c-FCFS and d-FCFS, being both work conserving and able to preempt long requests: it maintains slowdown below 10 up to 3.7 Mrps, 70% of the peak load. However, this simulation accounts for an optimistic 1$\mu$s preemption overhead and overlooks the practicality of supporting preemption at the microsecond scale.*
 
 
@@ -42,7 +41,6 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 **Leaving certain cores idle for readily handling potential future (bursts of) short requests is highly beneficial at microsecond scale**
 
 本质上，work preemption是较优的，但是在微秒级下interrupt的开销太大，所以Perséphone思想是通过利用请求的大小特征，不采用preemption的方式，实现近似最优的效果。
-
 >*Instead, given an understanding of each request’s potential processing time, an application aware, not work conserving policy can reduce slowdown for short requests by estimating their CPU demand and dedicating workers to them. These workers will be ```idle``` in the absence of short requests, but when they do, they are guaranteed to not be blocked behind long requests.*
 
 
@@ -51,7 +49,7 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 <img width="450" height="450" src="/img/post-pers-2.png"/>
 
 
-### Design
+## Design
 
 
 需要解决两个问题：
@@ -82,14 +80,14 @@ A single queue abstraction to application workers: it iterates over **typed queu
 
 
 
-### Evaluation
+## Evaluation
 
 <img width="950" height="500" src="/img/post-pers-7.png"/>
 
 <img width="950" height="500" src="/img/post-pers-6.png"/>
 
 
-### Thinking
+## Thinking
 
 Perséphone借鉴了网络流调度中短流优先（SJF/SRPT）的思想
 
