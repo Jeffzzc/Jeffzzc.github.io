@@ -77,9 +77,9 @@ A single queue abstraction to application workers: it iterates over **typed queu
 
 ## Evaluation
 
-<img width="950" height="500" src="/img/post-pers-7.png"/>
+<img width="950" height="600" src="/img/post-pers-7.png"/>
 
-<img width="950" height="500" src="/img/post-pers-6.png"/>
+<img width="950" height="600" src="/img/post-pers-6.png"/>
 
 
 ### Thinking

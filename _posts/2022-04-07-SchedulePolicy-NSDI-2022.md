@@ -38,7 +38,7 @@ tags:
 
 - 这篇文章通过合理抽象系统中的基本结构和要素，借助仿真实验得到一系列结论，非常经典的系统领域的研究方法
 
-- 几篇文章（相同或者同一个group的作者:Amy Ousterhout;[Adam Belay](http://www.abelay.me/),MIT CSAIL）的研究脉络：[Shenango(NSDI'19)](https://www.usenix.org/conference/nsdi19/presentation/ousterhout) -> [Caladan(OSDI'20)](https://www.usenix.org/conference/osdi20/presentation/fried) -> [Breakwater(OSDI'20)](https://www.usenix.org/conference/osdi20/presentation/cho) -> [SchedulePolicy(NSDI'22)](https://www.usenix.org/system/files/nsdi22-paper-mcclure_2.pdf)
+- 几篇文章（相同或者同一个group的作者:Amy Ousterhout;Joshua Fried;[Adam Belay](http://www.abelay.me/),MIT CSAIL）的研究脉络：[Shenango(NSDI'19)](https://www.usenix.org/conference/nsdi19/presentation/ousterhout) -> [Caladan(OSDI'20)](https://www.usenix.org/conference/osdi20/presentation/fried) -> [Breakwater(OSDI'20)](https://www.usenix.org/conference/osdi20/presentation/cho) -> [SchedulePolicy(NSDI'22)](https://www.usenix.org/system/files/nsdi22-paper-mcclure_2.pdf)
 
 	均关注**microsecond-scale tasks**:
 
