@@ -31,7 +31,7 @@ tags:
 	**CPU utilization-based**:
 	**Failure to find work**:
 
-- **各种策略的系统开销**
+- ```各种策略的系统开销(微秒级task下不能忽视)```
 
 ### Simulation Study
 
@@ -58,8 +58,8 @@ tags:
 
 - ***Finding 6***: Yielding cores only when no work is found (when there is no queued work or work stealing fails) makes it challenging to achieve good efficiency with small tasks, especially with many cores.
 
+```总结```：微秒级task下, work-stealing 是最好的负载均衡策略, 基于delay或utilization的核分配策略性能最好（具体是哪个取决于关注的metric）
 
-- ***总结***：Without new hardware, the best approach is to use work stealing as the load-balancing policy with delay range or utilization range for core allocations, depending on which end-to-end metric is more important to specify and stabilize
 
 
 ### Evaluation
