@@ -16,16 +16,15 @@ tags:
 在微秒级应用请求的背景下，深入研究负载均衡策略以及核分配策略对latency、CPU efficiency的影响  
 >*What load-balancing and core-allocation policies yield the best combination of latency (median and tail) and CPU efficiency for microsecond-scale tasks?*
 
-
 ### Background and Motivation
 
-- 负载均衡策略：每个请求到达时，调度到哪个核
+- 负载均衡策略：每个请求到达时，调度到哪个核  
 	**Single queue**:  
 	**Enqueue choice**: power of two choices 选择核  
 	**Work stealing**:  
 	**Work shedding**:  
 
-- 核分配策略：每个应用应该分配多少核
+- 核分配策略：每个应用应该分配多少核  
 	**Static**:  
 	**Per-task**:  
 	**Queueing-based**:  
