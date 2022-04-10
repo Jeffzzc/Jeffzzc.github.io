@@ -19,19 +19,19 @@ tags:
 ### Background and Motivation
 
 - 负载均衡策略：每个请求到达时，调度到哪个核  
-	**Single queue**:  
-	**Enqueue choice**: power of two choices 选择核  
-	**Work stealing**:  
-	**Work shedding**:  
+	Single queue:  
+	Enqueue choice: power of two choices 选择核  
+	Work stealing:  
+	Work shedding:  
 
 - 核分配策略：每个应用应该分配多少核  
-	**Static**:  
-	**Per-task**:  
-	**Queueing-based**:  
-	**CPU utilization-based**:
-	**Failure to find work**:
+	Static:  
+	Per-task:  
+	Queueing-based:  
+	CPU utilization-based:  
+	Failure to find work:
 
-- ```各种策略的系统开销(微秒级task下不能忽视)```
+- **各种策略的系统开销(微秒级task下不能忽视)**
 
 ### Simulation Study
 
