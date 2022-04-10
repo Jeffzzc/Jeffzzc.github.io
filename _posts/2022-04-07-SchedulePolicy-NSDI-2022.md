@@ -20,19 +20,17 @@ tags:
 ### Background and Motivation
 
 - 负载均衡策略：每个请求到达时，调度到哪个核
-
-**Single queue**:  
-**Enqueue choice**: power of two choices 选择核
-**Work stealing**:  
-**Work shedding**:  
+	**Single queue**:  
+	**Enqueue choice**: power of two choices 选择核  
+	**Work stealing**:  
+	**Work shedding**:  
 
 - 核分配策略：每个应用应该分配多少核
-
-**Static**:  
-**Per-task**:  
-**Queueing-based**:  
-**CPU utilization-based**:
-**Failure to find work**:
+	**Static**:  
+	**Per-task**:  
+	**Queueing-based**:  
+	**CPU utilization-based**:
+	**Failure to find work**:
 
 - **各种策略的系统开销**
 
@@ -54,7 +52,7 @@ tags:
 - ***Finding 4***: For short tasks, none of the core-allocation policies we tried achieved better latency (median or tail) for a given average efficiency than static core allocations (with the same load-balancing policy). However, this becomes possible with longer tasks.  
 对于微秒级task来说 动态的核分配策略的增益可能被其overhead抵消, 不如静态核分配策略
 
-<img width="650" height="950" src="/img/post-schedulepolicy-3.png"/>
+<img width="450" height="750" src="/img/post-schedulepolicy-3.png"/>
 
 
 - ***Finding 5***: Policies that explicitly optimize for an end-to-end user-visible metric (e.g., delay range and utilization range) have more consistent performance, as measured by those metrics, across different configurations.
@@ -72,8 +70,7 @@ tags:
 ### Thinking
 
 
-- 这篇文章通过合理抽象系统中的基本结构和要素，借助仿真实验得到一系列结论，非常经典的系统领域的研究方法（这篇文章的风格是笔者非常喜欢的\~）
-
+- 这篇文章通过合理抽象系统中的基本结构和要素，借助仿真实验得到一系列结论，非常经典的系统领域的研究方法（这篇文章的风格是笔者非常喜欢的\~）  
 - 几篇文章（相同或者同一个group的作者:Amy Ousterhout;Joshua Fried;[Adam Belay](http://www.abelay.me/),MIT CSAIL）的研究脉络：[Shenango(NSDI'19)](https://www.usenix.org/conference/nsdi19/presentation/ousterhout) -> [Caladan(OSDI'20)](https://www.usenix.org/conference/osdi20/presentation/fried) -> [Breakwater(OSDI'20)](https://www.usenix.org/conference/osdi20/presentation/cho) -> [Perséphone(OSDI'21)](https://yi-ran.github.io/2022/03/13/Persephone-SOSP-2021/) -> [SchedulePolicy(NSDI'22)](https://www.usenix.org/system/files/nsdi22-paper-mcclure_2.pdf)
 
 	均关注**microsecond-scale tasks**:

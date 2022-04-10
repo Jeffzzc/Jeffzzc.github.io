@@ -25,7 +25,7 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 
 **d-FCFS**:每个worker有local queue,分配平均的请求  
 **c-FCFS**:一个queue负责接收所有请求，然后dispath给idle的worker  
-**TS**:不同请求种类有不同的queue, 可preemption（[Shinjuku](https://www.usenix.org/conference/nsdi19/presentation/kaffes)
+**TS**:不同请求种类有不同的queue, 可preemption（[Shinjuku](https://www.usenix.org/conference/nsdi19/presentation/kaffes)）
 
 
 <img width="950" height="650" src="/img/post-pers-1.png"/>
