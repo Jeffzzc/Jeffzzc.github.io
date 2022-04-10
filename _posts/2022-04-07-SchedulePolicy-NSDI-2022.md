@@ -13,44 +13,80 @@ tags:
 
 （未完待续）
 
-在应用微秒级请求的背景下，深入研究负载均衡策略以及核分配策略对latency、CPU efficiency的影响
+在微秒级应用请求的背景下，深入研究负载均衡策略以及核分配策略对latency、CPU efficiency的影响  
+>*What load-balancing and core-allocation policies yield the best combination of latency (median and tail) and CPU efficiency for microsecond-scale tasks?*
+
 
 ### Background and Motivation
 
-- 负载均衡策略
+- 负载均衡策略：每个请求到达时，调度到哪个核
 
-- 核分配策略
+**Single queue**:  
+**Enqueue choice**: power of two choices 选择核
+**Work stealing**:  
+**Work shedding**:  
 
+- 核分配策略：每个应用应该分配多少核
 
+**Static**:  
+**Per-task**:  
+**Queueing-based**:  
+**CPU utilization-based**:
+**Failure to find work**:
+
+- **各种策略的系统开销**
 
 ### Simulation Study
 
+先统一采用静态核分配策略, 测试各个负载均衡策略的性能; 再在动态核分配策略下, 观察各个负载均衡策略的性能, 同时观察比较不同的核分配策略（相同负载均衡策略下）. 
 
 
+<img width="950" height="650" src="/img/post-schedulepolicy-1.png"/>
+
+- ***Finding 1***: With static core allocations, work stealing achieves better latency (at the median and tail) for a given efficiency (number of allocated cores) than work shedding or enqueue choice.
+
+- ***Finding 2***: With static core allocations, adding shedding on top of work stealing provides some latency benefit (primarily at the tail) while adding enqueue choice to work stealing makes performance unchanged or worse.
+
+<img width="950" height="650" src="/img/post-schedulepolicy-2.png"/>
+
+- ***Finding 3***: When cores are dynamically reallocated, work stealing performs better than shedding or enqueue choice. This is robust against all factors mentioned in Finding 1.
+
+- ***Finding 4***: For short tasks, none of the core-allocation policies we tried achieved better latency (median or tail) for a given average efficiency than static core allocations (with the same load-balancing policy). However, this becomes possible with longer tasks.  
+对于微秒级task来说 动态的核分配策略的增益可能被其overhead抵消, 不如静态核分配策略
+
+<img width="650" height="950" src="/img/post-schedulepolicy-3.png"/>
+
+
+- ***Finding 5***: Policies that explicitly optimize for an end-to-end user-visible metric (e.g., delay range and utilization range) have more consistent performance, as measured by those metrics, across different configurations.
+
+- ***Finding 6***: Yielding cores only when no work is found (when there is no queued work or work stealing fails) makes it challenging to achieve good efficiency with small tasks, especially with many cores.
+
+
+- ***总结***：Without new hardware, the best approach is to use work stealing as the load-balancing policy with delay range or utilization range for core allocations, depending on which end-to-end metric is more important to specify and stabilize
 
 
 ### Evaluation
 
-
+使用delay range or utilization range的策略优化[Caladan](https://www.usenix.org/conference/osdi20/presentation/fried)
 
 ### Thinking
 
 
-- 这篇文章通过合理抽象系统中的基本结构和要素，借助仿真实验得到一系列结论，非常经典的系统领域的研究方法
+- 这篇文章通过合理抽象系统中的基本结构和要素，借助仿真实验得到一系列结论，非常经典的系统领域的研究方法（这篇文章的风格是笔者非常喜欢的\~）
 
-- 几篇文章（相同或者同一个group的作者:Amy Ousterhout;Joshua Fried;[Adam Belay](http://www.abelay.me/),MIT CSAIL）的研究脉络：[Shenango(NSDI'19)](https://www.usenix.org/conference/nsdi19/presentation/ousterhout) -> [Caladan(OSDI'20)](https://www.usenix.org/conference/osdi20/presentation/fried) -> [Breakwater(OSDI'20)](https://www.usenix.org/conference/osdi20/presentation/cho) -> [SchedulePolicy(NSDI'22)](https://www.usenix.org/system/files/nsdi22-paper-mcclure_2.pdf)
+- 几篇文章（相同或者同一个group的作者:Amy Ousterhout;Joshua Fried;[Adam Belay](http://www.abelay.me/),MIT CSAIL）的研究脉络：[Shenango(NSDI'19)](https://www.usenix.org/conference/nsdi19/presentation/ousterhout) -> [Caladan(OSDI'20)](https://www.usenix.org/conference/osdi20/presentation/fried) -> [Breakwater(OSDI'20)](https://www.usenix.org/conference/osdi20/presentation/cho) -> [Perséphone(OSDI'21)](https://yi-ran.github.io/2022/03/13/Persephone-SOSP-2021/) -> [SchedulePolicy(NSDI'22)](https://www.usenix.org/system/files/nsdi22-paper-mcclure_2.pdf)
 
 	均关注**microsecond-scale tasks**:
 
-	Shenango: 首次提出使用细粒度的$\mu$s级调度实现CPU高efficiency
+	Shenango: 首次提出使用细粒度的$\mu$s级调度实现CPU高efficiency, 负载均衡使用work stealing, 核分配根据queueing delay
 
 	Caladan: 在 Shenango 基础之上，考虑资源竞争，实现更好QoS的 CPU scheduler
 
 	Breakwater: 基于Shenango/Caladan系统，做服务器端 RPC overload control
 
+	Perséphone: Dynamic Application-aware Reserved Cores (DARC), 感知应用处理时间，为具有短处理时间的请求预留核, 避免用preemption
+
 	SchedulePolicy: 在微秒级请求的背景下，深入研究负载均衡策略以及核分配策略对latency、CPU efficiency的影响
-
-
 
 
 ### 参考文献
