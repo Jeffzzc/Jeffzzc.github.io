@@ -38,7 +38,7 @@ A kernel-bypass OS scheduler designed to minimize **tail latency** for applicati
 **Leaving certain cores idle for readily handling potential future (bursts of) short requests is highly beneficial at microsecond scale**
 
 本质上，work preemption是最优的，但是在微秒级下interrupt的开销太大，所以Perséphone思想是通过利用请求的大小特征，不采用preemption的方式，实现近似最优的效果。  
->*Theory tells us that heavy-tailed workloads do best in terms of tail latency under processor sharing (PS) （[Shinjuku paper](https://www.usenix.org/system/files/nsdi19-kaffes.pdf).*  
+>*Theory tells us that heavy-tailed workloads do best in terms of tail latency under processor sharing (PS) （[Shinjuku paper](https://www.usenix.org/system/files/nsdi19-kaffes.pdf)）.*  
 >*Instead, given an understanding of each request’s potential processing time, an application aware, not work conserving policy can reduce slowdown for short requests by estimating their CPU demand and dedicating workers to them. These workers will be ```idle``` in the absence of short requests, but when they do, they are guaranteed to not be blocked behind long requests.*
 
 
