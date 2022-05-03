@@ -20,7 +20,7 @@ tags:
 	Single queue: 将所有task放在一个共享队列中  
 	Enqueue choice: enqueue a task to the less-loaded of two randomly sampled cores    
 	Work stealing:  当一个核空闲时，steal当前有任务排队的核（steal half）  
-	Work shedding: overloaded cores shed load to other cores or request other cores take some of their load  
+	Work shedding: overloaded cores shed load to other cores;request other cores take some of their load  
 
 - 核分配策略：每个应用应该分配多少核  
 	Static:  每个应用被分配的核数不变.需要预先考虑峰值任务量来分配核数.  
@@ -29,7 +29,10 @@ tags:
 	CPU utilization-based:  基于空闲的核数或者fraction of time cores spend working on tasks  
 	Failure to find work: yield a core when the core is unable to find any tasks to work on  
 
-- **各种策略的系统开销(微秒级task下不能忽视)**
+- **各种策略的系统开销(微秒级task下不能忽视)**  
+	At a bare minimum, **reallocating a core** requires an inter-processor interrupt (IPI) from the core that makes the reallocation decision to the core that will be reallocated to a different application; this takes about 1993 cycles or roughly 1 $\mu$s.  
+	Because **load balancing** requires communication between cores, its overhead arises primarily from cache misses while retrieving cache lines from the L2 cache of another core.
+
 
 ### Simulation Study
 
