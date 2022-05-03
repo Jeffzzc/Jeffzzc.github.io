@@ -16,17 +16,17 @@ tags:
 
 ### Background and Motivation
 
-- 负载均衡策略：每个请求到达时，调度到哪个核(load-balancing tasks across cores within an application)    
-	Single queue:  将所有task放在一个共享队列中  
-	Enqueue choice: power of two choices (enqueue a task to the less-loaded of two randomly sampled cores)    
+- 负载均衡策略：每个请求到达时，调度到哪个核(across cores within an application)    
+	Single queue: 将所有task放在一个共享队列中  
+	Enqueue choice: enqueue a task to the less-loaded of two randomly sampled cores    
 	Work stealing:  当一个核空闲时，steal当前有任务排队的核（steal half）  
-	Work shedding:  overloaded cores can shed load to other cores or request that other cores take some of their load  
+	Work shedding: overloaded cores shed load to other cores or request other cores take some of their load  
 
 - 核分配策略：每个应用应该分配多少核  
 	Static:  每个应用被分配的核数不变.需要预先考虑峰值任务量来分配核数.  
 	Per-task: 每当一个task到达时即分配一个核. 会有每task的和分配开销.  
 	Queueing-based:  当检测到有排队时新分配一个核.  
-	CPU utilization-based:  基于空闲的核数或者average fraction of time cores spend working on tasks  
+	CPU utilization-based:  基于空闲的核数或者fraction of time cores spend working on tasks  
 	Failure to find work: yield a core when the core is unable to find any tasks to work on  
 
 - **各种策略的系统开销(微秒级task下不能忽视)**
