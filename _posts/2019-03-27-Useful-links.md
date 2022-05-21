@@ -21,6 +21,7 @@ tags:
 - [Networking Research, Education, Mentoring and Service: Ten Insights](https://infocom2018.ieee-infocom.org/sites/infocom2018.ieee-infocom.org/files/KeynoteSlides_infocom_2018_final.pdf)
 - [How to Increase the Chances Your Paper is Accepted at ACM SIGCOMM](http://www.sigcomm.org/for-authors/hints-tips-and-guides/author-guide)
 - [Writing Perfect Papers (Baochun Li)](https://isn.xidian.edu.cn/_mediafile/isn/2017/06/05/1y0knnhzhc.pdf)
+- [Connectedpapers](https://www.connectedpapers.com/)
 
 
 
