@@ -38,7 +38,7 @@ Three challenges :
 (2) Structural. Given that overloads can occur anywhere in the network, the solution needs to handle dynamic overloads appearing anywhere along the path an RPC traverses.  
 (3) Scale. There may be tens of thousands of hosts, thousands of tenants, and hundreds of applications in a cluster, all requiring RPC performance at microsecond-scale.
 
-<img width="450" height="450" src="/img/post-aequitas-1.png"/>
+<img width="550" height="550" src="/img/post-aequitas-1.png"/>
 
 **key idea**: By comparing the RNL SLO targets and the actual measurements, the algorithm adjusts the amount of traffic admitted per destination-host for the QoS at which the RPC ran.
 
