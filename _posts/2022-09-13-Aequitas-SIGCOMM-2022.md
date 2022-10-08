@@ -48,7 +48,7 @@ Goal: provide RNL SLOs for RPC priority classes with performance requirements (P
 **两个核心设计**:  
 ***Align Network QoS with RPC priority***: Aequitas maps, at the granularity of RPCs, the three priority classes bijectively to three QoS classes served with WFQ-scheduling: PC RPCs to QoSh, NC to QoSm, and BE to QoSl. Aequitas provides SLOs for QoSh andQoSm;QoSl is treated as a scavenger class on which best-effort and downgraded traffic is served and offers no SLOs.  
 ***Distributed Admission Control via QoS downgrade to provide RNL SLOs***: whether to admit a given RPC on the requested QoS by controlling an admit probability. This controls the portion of RPCs admitted across QoS levels in order to meet RNL SLOs. In a departure from traditional mechanisms of admission-control that either drop or rate- limit traffic, Aequitas downgrades the unadmitted RPCs and issues them at the lowest QoS level. The algorithm follows an Additive Increase Multiplicative Decrease (AIMD) control.
-<img width="400" height="800" src="/img/post-aequitas-2.png"/>
+<img width="430" height="900" src="/img/post-aequitas-2.png"/>
 
 
 ### Evaluation
