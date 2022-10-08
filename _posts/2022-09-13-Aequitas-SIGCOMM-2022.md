@@ -25,7 +25,7 @@ RPC network-latency (***RNL***) : the time between the first RPC packet arriving
 **Network overload**: overloads can occur anywhere in the network along the path that an RPC takes between the client and the server. 
 
 **Mitigating network impact**: 现有实现性能隔离的方案：  
-（1）基于流大小调度：size与RPC并不对应  
+（1）基于流大小调度：size与RPC真实性能敏感度并不对应，不一定小流优先级应当设置为高  
 （2）严格优先级：应用级别，粒度粗，没有SLO保证，饿死问题；race to top问题, 大家都设置高优先级  
 （3）加权公平队列：应用级别，粒度粗，没有SLO保证；race to top问题, 大家都设置高优先级  
 
@@ -45,7 +45,7 @@ Three challenges :
 
 **理论分析**：controlling RPC network-latency across priority classes to provide differentiated SLOs by controlling the amount of traffic admitted on the respective QoS as realized by WFQ.
 
-**两个核心设计**：
+**两个核心设计**:  
 ***Align Network QoS with RPC priority***: Aequitas maps, at the granularity of RPCs, the three priority classes bijectively to three QoS classes served with WFQ-scheduling: PC RPCs to QoSh, NC to QoSm, and BE to QoSl. Aequitas provides SLOs for QoSh andQoSm;QoSl is treated as a scavenger class on which best-effort and downgraded traffic is served and offers no SLOs.  
 ***Distributed Admission Control via QoS down- grade to provide RNL SLOs***: whether to admit a given RPC on the requested QoS by controlling an admit probability. This controls the portion of RPCs admitted across QoS levels in order to meet RNL SLOs. In a departure from traditional mechanisms of admission-control that either drop or rate- limit traffic, Aequitas downgrades the unadmitted RPCs and issues them at the lowest QoS level. The algorithm follows an Additive Increase Multiplicative Decrease (AIMD) control.
 <img width="400" height="800" src="/img/post-aequitas-2.png"/>
