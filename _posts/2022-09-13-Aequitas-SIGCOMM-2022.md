@@ -60,9 +60,9 @@ QoS-mix(QoSh , QoSm , QoSl ) is (0.6, 0.3, 0.1)
 
 <img width="500" height="400" src="/img/post-aequitas-4.png"/>
 
-<img width="450" height="450" src="/img/post-aequitas-5.png"/>
+<img width="550" height="450" src="/img/post-aequitas-5.png"/>
 
-<img width="450" height="450" src="/img/post-aequitas-6.png"/>
+<img width="550" height="450" src="/img/post-aequitas-6.png"/>
 
 
 ### Thinking
