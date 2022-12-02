@@ -27,6 +27,7 @@ tags:
 - **IOMMU induced congestion**: every DMA request initiated by the NIC, one must translate the NIC-visible virtual address to host physical address; when the address translation (page) table does not fit into the cache, one or more memory accesses are required for the translation. The resulting increase in per-DMA latency directly impacts the rate at which NIC can transfer data to CPU.  
 - **Memory bus induced congestion**: CPUs reading/writing data to main memory share the memory bus bandwidth with the NIC performing DMA operations; when memory bus is contended, CPUs are able to acquire a larger fraction of memory bus bandwidth than NIC. As a result, in-flight packets result in NIC buffers building up before congestion control protocols can react
 
+Note: 实验中发现Swift也起了作用，但是因为host delay 阈值设置为100us, NIC buffer size 为1MB, 只有当队列积累到一定程度swift才起作用，并且行为展现为典型的锯齿型  
 >*Technology trends suggest that the problem of host congestion is only going to get worse with time. As discussed earlier, while host access link bandwidths are likely to increase by 10× over the next few years, technology trends for essentially all other host resources—e.g., NIC buffer sizes, the ratio of access link bandwidth to PCIe bandwidth, IOTLB sizes, memory access latencies, and memory bandwidth per core are largely stagnant.*
 
 **解决思路**：  
