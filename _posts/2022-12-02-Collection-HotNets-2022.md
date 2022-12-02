@@ -19,7 +19,7 @@ tags:
 
 <img width="450" height="450" src="/img/post-hotnets22-1-1.png"/>
 
-<img width="600" height="250" src="/img/post-hotnets22-1-2.png"/>
+<img width="550" height="250" src="/img/post-hotnets22-1-2.png"/>
 
 
 ### 2. Congestion Control in Machine Learning Clusters
