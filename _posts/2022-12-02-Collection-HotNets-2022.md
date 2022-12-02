@@ -18,18 +18,22 @@ tags:
 揭示了Google实际生产集群中主机拥塞的原因：高带宽访问链路导致主机互连（NIC 到 CPU 数据路径）出现瓶颈。
 >*Host congestion turns out to be a result of imperfect interaction (and resource imbalance!) between multiple components within the host interconnect*
 
-<img width="450" height="450" src="/img/post-hotnets22-1-1.png"/>
+主机拥塞丢包：
+<img width="400" height="400" src="/img/post-hotnets22-1-1.png"/>
 
-接收端datapath
+接收端datapath：
 <img width="550" height="250" src="/img/post-hotnets22-1-2.png"/>
 
-host congestion 两大核心原因：  
-**IOMMU contention**:  
-**Memory bus contention**:
+***host congestion 两大核心原因***：  
+- **IOMMU induced congestion**: every DMA request initiated by the NIC, one must translate the NIC-visible virtual address to host physical address; when the address translation (page) table does not fit into the cache, one or more memory accesses are required for the translation. The resulting increase in per-DMA latency directly impacts the rate at which NIC can transfer data to CPU.  
+- **Memory bus induced congestion**: CPUs reading/writing data to main memory share the memory bus bandwidth with the NIC performing DMA operations; when memory bus is contended, CPUs are able to acquire a larger fraction of mem- ory bus bandwidth than NIC. As a result, in-flight packets result in NIC buffers building up before congestion control protocols can react
 
 >*Technology trends suggest that the problem of host congestion is only going to get worse with time. As discussed earlier, while host access link bandwidths are likely to increase by 10× over the next few years, technology trends for essentially all other host resources—e.g., NIC buffer sizes, the ratio of access link bandwidth to PCIe bandwidth, IOTLB sizes, memory access latencies, and memory bandwidth per core are largely stagnant.*
 
-**解决思路**：Rethinking host architecture for future-generation datacenter networks; Rethinking congestion signals; Rethinking congestion response
+**解决思路**：  
+Rethinking host architecture for future-generation datacenter networks;   
+Rethinking congestion signals：CC 考虑主机内的信号，如CPU utilization, memory bandwidth contention, memory fragmentation等     
+Rethinking congestion response：计算资源、内存资源、网络带宽资源都需要分配，传统CC只是通过减速来调整网络带宽资源分配。需要一种更加协调一致分配多种资源的方法，以及考虑host congestion的响应时间尺度。
 
 
 ### 2. Congestion Control in Machine Learning Clusters
