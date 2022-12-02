@@ -19,14 +19,13 @@ tags:
 >*Host congestion turns out to be a result of imperfect interaction (and resource imbalance!) between multiple components within the host interconnect*
 
 主机拥塞丢包：
-<img width="400" height="400" src="/img/post-hotnets22-1-1.png"/>
-
+<img width="380" height="380" src="/img/post-hotnets22-1-1.png"/>  
 接收端datapath：
 <img width="550" height="250" src="/img/post-hotnets22-1-2.png"/>
 
 ***host congestion 两大核心原因***：  
 - **IOMMU induced congestion**: every DMA request initiated by the NIC, one must translate the NIC-visible virtual address to host physical address; when the address translation (page) table does not fit into the cache, one or more memory accesses are required for the translation. The resulting increase in per-DMA latency directly impacts the rate at which NIC can transfer data to CPU.  
-- **Memory bus induced congestion**: CPUs reading/writing data to main memory share the memory bus bandwidth with the NIC performing DMA operations; when memory bus is contended, CPUs are able to acquire a larger fraction of mem- ory bus bandwidth than NIC. As a result, in-flight packets result in NIC buffers building up before congestion control protocols can react
+- **Memory bus induced congestion**: CPUs reading/writing data to main memory share the memory bus bandwidth with the NIC performing DMA operations; when memory bus is contended, CPUs are able to acquire a larger fraction of memory bus bandwidth than NIC. As a result, in-flight packets result in NIC buffers building up before congestion control protocols can react
 
 >*Technology trends suggest that the problem of host congestion is only going to get worse with time. As discussed earlier, while host access link bandwidths are likely to increase by 10× over the next few years, technology trends for essentially all other host resources—e.g., NIC buffer sizes, the ratio of access link bandwidth to PCIe bandwidth, IOTLB sizes, memory access latencies, and memory bandwidth per core are largely stagnant.*
 
