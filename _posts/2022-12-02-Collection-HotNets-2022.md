@@ -30,10 +30,10 @@ tags:
 Note: 实验中发现Swift也起了作用，但是因为host delay 阈值设置为100us, NIC buffer size 为1MB, 只有当队列积累到一定程度swift才起作用，并且行为展现为典型的锯齿型  
 >*Technology trends suggest that the problem of host congestion is only going to get worse with time. As discussed earlier, while host access link bandwidths are likely to increase by 10× over the next few years, technology trends for essentially all other host resources—e.g., NIC buffer sizes, the ratio of access link bandwidth to PCIe bandwidth, IOTLB sizes, memory access latencies, and memory bandwidth per core are largely stagnant.*
 
-**解决思路**：  
-Rethinking host architecture for future-generation datacenter networks;   
-Rethinking congestion signals：CC 考虑主机内的信号，如CPU utilization, memory bandwidth contention, memory fragmentation等     
-Rethinking congestion response：计算资源、内存资源、网络带宽资源都需要分配，传统CC只是通过减速来调整网络带宽资源分配。需要一种更加协调一致分配多种资源的方法，以及考虑host congestion的响应时间尺度。
+**解决思路**：
+- Rethinking host architecture for future-generation datacenter networks;   
+- Rethinking congestion signals：CC 考虑主机内的信号，如CPU utilization, memory bandwidth contention, memory fragmentation等     
+- Rethinking congestion response：计算资源、内存资源、网络带宽资源都需要分配，传统CC只是通过减速来调整网络带宽资源分配。需要一种更加协调一致分配多种资源的方法，以及考虑host congestion的响应时间尺度。
 
 
 ### 2. Congestion Control in Machine Learning Clusters
@@ -42,19 +42,19 @@ Rethinking congestion response：计算资源、内存资源、网络带宽资�
 
 <img width="850" height="350" src="/img/post-hotnets22-2-1.png"/>
 
-**原因**: DNN训练具有ON-OFF特征,即计算-通信-计算-通信-..... 不公平性实际上可以将不同作业的计算和通信阶段交替穿插在一起，使它们能够一次性独占网络带宽，从而提高所有竞争作业的训练时间。这一类作业被称作```compatible```，如下图，最终两个作业计算和通信的重叠越来越小
+**原因**: DNN训练具有ON-OFF特征,即计算-通信-计算-通信-..... 不公平性实际上可以将不同作业的计算和通信阶段交替穿插在一起，使它们能够一次性独占网络带宽，从而提高所有竞争作业的训练时间。这一类作业被称作```compatible```，如下图(b)，最终两个作业计算和通信的重叠越来越小
 
 <img width="850" height="600" src="/img/post-hotnets22-2-2.png"/>
 
 
-**如何判断compatible**: 建立了几何抽象，圆圈周长代表interation time（一轮computation time + communication time）. 为了避免拥塞，旋转圆圈以找到通信所占的弧不碰撞的位置，如果找到这样的轮换，则两个作业是兼容的。此外，重叠每个作业（未着色区域）的计算时间是可以接受的，因为假设作业之间不共享计算资源。如果两个作业 interation time不同，取二者最小公倍数
+**如何判断compatible**: 建立了几何抽象，圆圈周长代表interation time（一轮computation time + communication time）. 为了避免拥塞，旋转圆圈以找到通信所占的弧不碰撞的位置，如果找到这样的轮换，则两个作业是兼容的。此外，重叠每个作业（未着色区域）的计算时间是可以接受的，因为假设作业之间不共享计算资源。如果两个作业interation time不同，取二者最小公倍数
 
 <img width="600" height="320" src="/img/post-hotnets22-2-3.png"/>
 
-**如何在部署中引入不公平性**:  
+**如何在部署中引入不公平性**:
 - 使用不公平的传输控制协议：对compatible的作业使用不公平的拥塞控制算法，例如调整DCQCN中$R_{AI}$参数，a job closer to completing its communication phase is more aggressive than a job just about to start its communication
 - 利用优先级队列：每个作业赋予优先级，缺点是交换机队列有限
-- 流调度：根据算出的作业是否compatible信息，使用集中式控制器显式控制作业通信阶段的开始，但是需要在cluster范围工作，具有全局高精度始时钟
+- 流调度：根据算出的作业是否compatible信息，使用集中式控制器显式控制作业通信阶段的开始，但是需要在cluster范围工作，具有全局高精度时钟
 
 ### 3. Sidecar: In-Network Performance Enhancements in the Age of Paranoid Transport Protocols
 
