@@ -47,11 +47,10 @@ Rethinking congestion response：计算资源、内存资源、网络带宽资�
 <img width="850" height="600" src="/img/post-hotnets22-2-2.png"/>
 
 
-**如何判断compatible**: 建立了几何抽象，圆圈周长代表interation time（一轮computation time + communication time）. 为了避免拥塞，旋转圆圈以找到通信所占的弧不碰撞的位置，如果找到这样的轮换，则两个作业是兼容的。此外，重叠每个作业（未着色区域）的计算时间是可以接受的，因为假设作业之间不共享计算资源。
+**如何判断compatible**: 建立了几何抽象，圆圈周长代表interation time（一轮computation time + communication time）. 为了避免拥塞，旋转圆圈以找到通信所占的弧不碰撞的位置，如果找到这样的轮换，则两个作业是兼容的。此外，重叠每个作业（未着色区域）的计算时间是可以接受的，因为假设作业之间不共享计算资源。如果两个作业 interation time不同，取二者最小公倍数
 
-<img width="700" height="400" src="/img/post-hotnets22-2-3.png"/>
+<img width="600" height="320" src="/img/post-hotnets22-2-3.png"/>
 
-如果两个作业 interation time不同，取二者最小公倍数
 
 
 
