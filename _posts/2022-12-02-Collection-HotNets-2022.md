@@ -38,9 +38,19 @@ Rethinking congestion response：计算资源、内存资源、网络带宽资�
 
 ### 2. Congestion Control in Machine Learning Clusters
 
-这篇论文发现一个有意思的现象：传统拥塞控制追求的公平性对于ML工作负载可能不友好，不公平的CC反而可以加速ML工作负载
+这篇论文发现一个有意思的现象：传统拥塞控制追求的公平性对于ML工作负载可能不友好，不公平的CC反而可以加速ML工作负载。
 
-<img width="800" height="350" src="/img/post-hotnets22-2-1.png"/>
+<img width="850" height="350" src="/img/post-hotnets22-2-1.png"/>
+
+**原因**: DNN训练具有ON-OFF特征,即计算-通信-计算-通信-..... 不公平性实际上可以将不同作业的计算和通信阶段交替穿插在一起，使它们能够一次性独占网络带宽，从而提高所有竞争作业的训练时间。这一类作业被称作***compatible***
+
+<img width="850" height="600" src="/img/post-hotnets22-2-2.png"/>
+
+
+**如何判断compatible**: 几何抽象
+
+<img width="700" height="400" src="/img/post-hotnets22-2-3.png"/>
+
 
 
 ### 3. Sidecar: In-Network Performance Enhancements in the Age of Paranoid Transport Protocols
