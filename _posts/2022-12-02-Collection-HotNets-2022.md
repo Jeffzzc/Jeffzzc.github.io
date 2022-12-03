@@ -51,6 +51,8 @@ Rethinking congestion response：计算资源、内存资源、网络带宽资�
 
 <img width="700" height="400" src="/img/post-hotnets22-2-3.png"/>
 
+如果两个作业 interation time不同，取二者最小公倍数
+
 
 
 ### 3. Sidecar: In-Network Performance Enhancements in the Age of Paranoid Transport Protocols
