@@ -7,7 +7,7 @@ author:     Yiran
 header-img: img/post-bg-bear.jpg
 catalog: true
 tags:
-    - Distributed Sytems
+    - Distributed Systems
 ---
 
 第一个为基于任务的分布式系统提供有效的 Collective Communication 支持的工作。

@@ -8,7 +8,7 @@ header-img: img/post-bg-sky3.jpg
 catalog: true
 tags:
     - microsecond-scale
-    - Distributed Sytems
+    - Distributed Systems
 ---
  
 分布式Admission Control，保证性能敏感**RPC**的**网络时延**满足SLO

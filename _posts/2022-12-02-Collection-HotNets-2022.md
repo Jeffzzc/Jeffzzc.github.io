@@ -51,7 +51,7 @@ Note: 实验中发现Swift也起了作用，但是因为host delay 阈值设置�
 
 <img width="600" height="320" src="/img/post-hotnets22-2-3.png"/>
 
-**如何在部署中引入不公平性**:
+**如何在部署中引入不公平性以降低网络拥塞对ML作业的影响**: 
 - 使用不公平的传输控制协议：对compatible的作业使用不公平的拥塞控制算法，例如调整DCQCN中$R_{AI}$参数，a job closer to completing its communication phase is more aggressive than a job just about to start its communication
 - 利用优先级队列：每个作业赋予优先级，缺点是交换机队列有限
 - 流调度：根据算出的作业是否compatible信息，使用集中式控制器显式控制作业通信阶段的开始，但是需要在cluster范围工作，具有全局高精度时钟
