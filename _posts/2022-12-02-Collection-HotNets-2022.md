@@ -10,7 +10,6 @@ tags:
     - Congestion Control
     - Distributed Systems
     - Machine Learning
-    - Satellite Networking
 ---
  
 ### 1. Understanding Host Interconnect Congestion
