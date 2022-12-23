@@ -59,7 +59,6 @@ Note: 实验中发现Swift也起了作用，但是因为host delay 阈值设置�
 ### 3. Sidecar: In-Network Performance Enhancements in the Age of Paranoid Transport Protocols
 
 
-### 4. Towards Dual-band Reconfigurable Metamaterial Surfaces for Satellite Networking
 
 
 
