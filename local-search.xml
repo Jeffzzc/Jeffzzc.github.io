@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>DDPM代码复现</title>
+    <link href="/2024/12/03/DDPM%E8%AE%BA%E6%96%87%E5%AD%A6%E4%B9%A0/"/>
+    <url>/2024/12/03/DDPM%E8%AE%BA%E6%96%87%E5%AD%A6%E4%B9%A0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="DDPM代码复现"><a href="#DDPM代码复现" class="headerlink" title="DDPM代码复现"></a>DDPM代码复现</h1><h2 id="图像生成的基本理解"><a href="#图像生成的基本理解" class="headerlink" title="图像生成的基本理解"></a>图像生成的基本理解</h2><p>图像生成任务就是把随机生成的向量（噪声）映射成和训练图像类似的图像。为此，扩散模型把这个过程看成是对纯噪声图像的去噪过程。通过学习把图像逐步变成纯噪声的逆操作，扩散模型可以把任何一个纯噪声图像变成有意义的图像，也就是完成图像生成。</p><h2 id="DDPM的代码实现："><a href="#DDPM的代码实现：" class="headerlink" title="DDPM的代码实现："></a>DDPM的代码实现：</h2>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>diffusion model</tag>
+      
+      <tag>论文阅读</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/2024/07/11/hello-world/"/>
     <url>/2024/07/11/hello-world/</url>
