@@ -1,13 +1,13 @@
 # Site settings
-title: Yiran Blog
-SEOTitle: 乙然的博客 | Yiran Blog
+title: Zecheng Blog
+SEOTitle: Jeffzuo的博客 | Jeffzzc Blog
 header-img: img/post-bg-night.jpg
-email: yiran914@gmail.com
+email: zuozecheng@bupt.edu.cn
 description: "Every failure is leading towards success."
-keyword: "Blog, Yiran"
-url: "http://Yi-ran.github.io"          # your host, for absolute URL
+keyword: "Blog, Zecheng"
+url: "http://Jeffzzc.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/Yi-ran/Yi-ran.github.io.git" # you code repository
+github_repo: "https://github.com/Jeffzzc/Jeffzzc.github.io/" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -20,7 +20,7 @@ sidebar-avatar: /img/post-bg-lake.jpg      # use absolute URL, seeing it's used 
 RSS: false
 # weibo_username:     qiubaiying
 #zhihu_username:     
-github_username:    Yi-ran
+github_username:    Jeffzzc
 #facebook_username:  baiying.qiu.7
 #jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
@@ -62,13 +62,13 @@ kramdown:
 
 # Gitalk
 gitalk:
-  enable: yes    #是否开启Gitalk评论
-  clientID: bd3305eb99c30eedf2c7                            #生成的clientID
-  clientSecret: b468c3bfd3781c7352c718705c35f921f017db79    #生成的clientSecret
-  repo: Yi-ran.github.io    #仓库名称
-  owner: Yi-ran    #github用户名
-  admin: Yi-ran
-  distractionFreeMode: true #是否启用类似FB的阴影遮罩
+  enable: yes  # 是否开启 Gitalk 评论
+  clientID: Ov23lipZf0QZ7BqYnIHR  # 生成的 clientID
+  clientSecret: 3f2353891a6de80402ee0164b84e3a3359de3f5e  # 生成的 clientSecret
+  repo: Jeffzzc.github.io  # 仓库名称
+  owner: Jeffzzc  # github 用户名
+  admin: Jeffzzc
+  distractionFreeMode: true  # 是否启用类似 FB 的阴影遮罩
 
 
 # 统计
